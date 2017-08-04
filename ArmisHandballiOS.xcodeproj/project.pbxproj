@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		660570C21F34BABF00D5E053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570C11F34BABF00D5E053 /* AppDelegate.swift */; };
+		660570C41F34BAC000D5E053 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570C31F34BAC000D5E053 /* FirstViewController.swift */; };
+		660570C61F34BAC000D5E053 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570C51F34BAC000D5E053 /* SecondViewController.swift */; };
+		660570C91F34BAC000D5E053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660570C71F34BAC000D5E053 /* Main.storyboard */; };
+		660570CB1F34BAC000D5E053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660570CA1F34BAC000D5E053 /* Assets.xcassets */; };
+		660570CE1F34BAC000D5E053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660570CC1F34BAC000D5E053 /* LaunchScreen.storyboard */; };
+		660570D91F34BAC000D5E053 /* ArmisHandballiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570D81F34BAC000D5E053 /* ArmisHandballiOSTests.swift */; };
+		660570E41F34BAC000D5E053 /* ArmisHandballiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570E31F34BAC000D5E053 /* ArmisHandballiOSUITests.swift */; };
+		660570F51F34BB4D00D5E053 /* Athele.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570F41F34BB4D00D5E053 /* Athele.swift */; };
+		660570F71F34CF5B00D5E053 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570F61F34CF5B00D5E053 /* Team.swift */; };
+		660570F91F34D04800D5E053 /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570F81F34D04800D5E053 /* Nationality.swift */; };
+		660570FB1F34D0E600D5E053 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570FA1F34D0E600D5E053 /* Club.swift */; };
+		660570FD1F34D36100D5E053 /* AgeRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570FC1F34D36100D5E053 /* AgeRange.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		660570D51F34BAC000D5E053 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 660570B61F34BABF00D5E053 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 660570BD1F34BABF00D5E053;
+			remoteInfo = ArmisHandballiOS;
+		};
+		660570E01F34BAC000D5E053 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 660570B61F34BABF00D5E053 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 660570BD1F34BABF00D5E053;
+			remoteInfo = ArmisHandballiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		660570BE1F34BABF00D5E053 /* ArmisHandballiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArmisHandballiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		660570C11F34BABF00D5E053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		660570C31F34BAC000D5E053 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		660570C51F34BAC000D5E053 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		660570C81F34BAC000D5E053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		660570CA1F34BAC000D5E053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		660570CD1F34BAC000D5E053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		660570CF1F34BAC000D5E053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		660570D41F34BAC000D5E053 /* ArmisHandballiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArmisHandballiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		660570D81F34BAC000D5E053 /* ArmisHandballiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmisHandballiOSTests.swift; sourceTree = "<group>"; };
+		660570DA1F34BAC000D5E053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		660570DF1F34BAC000D5E053 /* ArmisHandballiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArmisHandballiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		660570E31F34BAC000D5E053 /* ArmisHandballiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmisHandballiOSUITests.swift; sourceTree = "<group>"; };
+		660570E51F34BAC000D5E053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		660570F41F34BB4D00D5E053 /* Athele.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athele.swift; sourceTree = "<group>"; };
+		660570F61F34CF5B00D5E053 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		660570F81F34D04800D5E053 /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
+		660570FA1F34D0E600D5E053 /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
+		660570FC1F34D36100D5E053 /* AgeRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRange.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		660570BB1F34BABF00D5E053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660570D11F34BAC000D5E053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660570DC1F34BAC000D5E053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		660570B51F34BABF00D5E053 = {
+			isa = PBXGroup;
+			children = (
+				660570C01F34BABF00D5E053 /* ArmisHandballiOS */,
+				660570D71F34BAC000D5E053 /* ArmisHandballiOSTests */,
+				660570E21F34BAC000D5E053 /* ArmisHandballiOSUITests */,
+				660570BF1F34BABF00D5E053 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		660570BF1F34BABF00D5E053 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				660570BE1F34BABF00D5E053 /* ArmisHandballiOS.app */,
+				660570D41F34BAC000D5E053 /* ArmisHandballiOSTests.xctest */,
+				660570DF1F34BAC000D5E053 /* ArmisHandballiOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660570C01F34BABF00D5E053 /* ArmisHandballiOS */ = {
+			isa = PBXGroup;
+			children = (
+				660570F11F34BAFE00D5E053 /* Model */,
+				660570C11F34BABF00D5E053 /* AppDelegate.swift */,
+				660570C31F34BAC000D5E053 /* FirstViewController.swift */,
+				660570C51F34BAC000D5E053 /* SecondViewController.swift */,
+				660570C71F34BAC000D5E053 /* Main.storyboard */,
+				660570CA1F34BAC000D5E053 /* Assets.xcassets */,
+				660570CC1F34BAC000D5E053 /* LaunchScreen.storyboard */,
+				660570CF1F34BAC000D5E053 /* Info.plist */,
+			);
+			path = ArmisHandballiOS;
+			sourceTree = "<group>";
+		};
+		660570D71F34BAC000D5E053 /* ArmisHandballiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				660570D81F34BAC000D5E053 /* ArmisHandballiOSTests.swift */,
+				660570DA1F34BAC000D5E053 /* Info.plist */,
+			);
+			path = ArmisHandballiOSTests;
+			sourceTree = "<group>";
+		};
+		660570E21F34BAC000D5E053 /* ArmisHandballiOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				660570E31F34BAC000D5E053 /* ArmisHandballiOSUITests.swift */,
+				660570E51F34BAC000D5E053 /* Info.plist */,
+			);
+			path = ArmisHandballiOSUITests;
+			sourceTree = "<group>";
+		};
+		660570F11F34BAFE00D5E053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				660570F41F34BB4D00D5E053 /* Athele.swift */,
+				660570F61F34CF5B00D5E053 /* Team.swift */,
+				660570F81F34D04800D5E053 /* Nationality.swift */,
+				660570FA1F34D0E600D5E053 /* Club.swift */,
+				660570FC1F34D36100D5E053 /* AgeRange.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		660570BD1F34BABF00D5E053 /* ArmisHandballiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660570E81F34BAC000D5E053 /* Build configuration list for PBXNativeTarget "ArmisHandballiOS" */;
+			buildPhases = (
+				660570BA1F34BABF00D5E053 /* Sources */,
+				660570BB1F34BABF00D5E053 /* Frameworks */,
+				660570BC1F34BABF00D5E053 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArmisHandballiOS;
+			productName = ArmisHandballiOS;
+			productReference = 660570BE1F34BABF00D5E053 /* ArmisHandballiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		660570D31F34BAC000D5E053 /* ArmisHandballiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660570EB1F34BAC000D5E053 /* Build configuration list for PBXNativeTarget "ArmisHandballiOSTests" */;
+			buildPhases = (
+				660570D01F34BAC000D5E053 /* Sources */,
+				660570D11F34BAC000D5E053 /* Frameworks */,
+				660570D21F34BAC000D5E053 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				660570D61F34BAC000D5E053 /* PBXTargetDependency */,
+			);
+			name = ArmisHandballiOSTests;
+			productName = ArmisHandballiOSTests;
+			productReference = 660570D41F34BAC000D5E053 /* ArmisHandballiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		660570DE1F34BAC000D5E053 /* ArmisHandballiOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660570EE1F34BAC000D5E053 /* Build configuration list for PBXNativeTarget "ArmisHandballiOSUITests" */;
+			buildPhases = (
+				660570DB1F34BAC000D5E053 /* Sources */,
+				660570DC1F34BAC000D5E053 /* Frameworks */,
+				660570DD1F34BAC000D5E053 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				660570E11F34BAC000D5E053 /* PBXTargetDependency */,
+			);
+			name = ArmisHandballiOSUITests;
+			productName = ArmisHandballiOSUITests;
+			productReference = 660570DF1F34BAC000D5E053 /* ArmisHandballiOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		660570B61F34BABF00D5E053 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Pedro Neto";
+				TargetAttributes = {
+					660570BD1F34BABF00D5E053 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					660570D31F34BAC000D5E053 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 660570BD1F34BABF00D5E053;
+					};
+					660570DE1F34BAC000D5E053 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 660570BD1F34BABF00D5E053;
+					};
+				};
+			};
+			buildConfigurationList = 660570B91F34BABF00D5E053 /* Build configuration list for PBXProject "ArmisHandballiOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 660570B51F34BABF00D5E053;
+			productRefGroup = 660570BF1F34BABF00D5E053 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				660570BD1F34BABF00D5E053 /* ArmisHandballiOS */,
+				660570D31F34BAC000D5E053 /* ArmisHandballiOSTests */,
+				660570DE1F34BAC000D5E053 /* ArmisHandballiOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660570BC1F34BABF00D5E053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660570CE1F34BAC000D5E053 /* LaunchScreen.storyboard in Resources */,
+				660570CB1F34BAC000D5E053 /* Assets.xcassets in Resources */,
+				660570C91F34BAC000D5E053 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660570D21F34BAC000D5E053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660570DD1F34BAC000D5E053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		660570BA1F34BABF00D5E053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660570C61F34BAC000D5E053 /* SecondViewController.swift in Sources */,
+				660570C21F34BABF00D5E053 /* AppDelegate.swift in Sources */,
+				660570F51F34BB4D00D5E053 /* Athele.swift in Sources */,
+				660570FD1F34D36100D5E053 /* AgeRange.swift in Sources */,
+				660570FB1F34D0E600D5E053 /* Club.swift in Sources */,
+				660570F71F34CF5B00D5E053 /* Team.swift in Sources */,
+				660570F91F34D04800D5E053 /* Nationality.swift in Sources */,
+				660570C41F34BAC000D5E053 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660570D01F34BAC000D5E053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660570D91F34BAC000D5E053 /* ArmisHandballiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660570DB1F34BAC000D5E053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660570E41F34BAC000D5E053 /* ArmisHandballiOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		660570D61F34BAC000D5E053 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 660570BD1F34BABF00D5E053 /* ArmisHandballiOS */;
+			targetProxy = 660570D51F34BAC000D5E053 /* PBXContainerItemProxy */;
+		};
+		660570E11F34BAC000D5E053 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 660570BD1F34BABF00D5E053 /* ArmisHandballiOS */;
+			targetProxy = 660570E01F34BAC000D5E053 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		660570C71F34BAC000D5E053 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660570C81F34BAC000D5E053 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		660570CC1F34BAC000D5E053 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660570CD1F34BAC000D5E053 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		660570E61F34BAC000D5E053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		660570E71F34BAC000D5E053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		660570E91F34BAC000D5E053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ArmisHandballiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = trimteam.ArmisHandballiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		660570EA1F34BAC000D5E053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ArmisHandballiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = trimteam.ArmisHandballiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		660570EC1F34BAC000D5E053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ArmisHandballiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = trimteam.ArmisHandballiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArmisHandballiOS.app/ArmisHandballiOS";
+			};
+			name = Debug;
+		};
+		660570ED1F34BAC000D5E053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ArmisHandballiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = trimteam.ArmisHandballiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArmisHandballiOS.app/ArmisHandballiOS";
+			};
+			name = Release;
+		};
+		660570EF1F34BAC000D5E053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ArmisHandballiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = trimteam.ArmisHandballiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ArmisHandballiOS;
+			};
+			name = Debug;
+		};
+		660570F01F34BAC000D5E053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ArmisHandballiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = trimteam.ArmisHandballiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ArmisHandballiOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		660570B91F34BABF00D5E053 /* Build configuration list for PBXProject "ArmisHandballiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660570E61F34BAC000D5E053 /* Debug */,
+				660570E71F34BAC000D5E053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660570E81F34BAC000D5E053 /* Build configuration list for PBXNativeTarget "ArmisHandballiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660570E91F34BAC000D5E053 /* Debug */,
+				660570EA1F34BAC000D5E053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660570EB1F34BAC000D5E053 /* Build configuration list for PBXNativeTarget "ArmisHandballiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660570EC1F34BAC000D5E053 /* Debug */,
+				660570ED1F34BAC000D5E053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660570EE1F34BAC000D5E053 /* Build configuration list for PBXNativeTarget "ArmisHandballiOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660570EF1F34BAC000D5E053 /* Debug */,
+				660570F01F34BAC000D5E053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 660570B61F34BABF00D5E053 /* Project object */;
+}
