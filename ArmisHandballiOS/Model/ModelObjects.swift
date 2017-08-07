@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Athlete {
+struct Athlete :Codable {
     let name : String
     let IDNumber : String
     let gender : String
@@ -19,46 +19,46 @@ struct Athlete {
     let nationality : Nationality
 }
 
-struct Team {
+struct Team :  Codable {
     let gender : String
     let club : Club
     let ageRange : AgeRange
 }
 
-struct Nationality {
+struct Nationality : Codable {
     let name : String
 }
 
-struct Club {
+struct Club : Codable {
     let nationality:String
     let name:String
     let taxNumber : String
     let clubType : String
 }
 
-struct AgeRange {
+struct AgeRange : Codable {
     let lowerLimit : Int
     let upperLimit : Int
 }
 
-struct Tournament{
+struct Tournament :  Codable{
     let name : String
     let gender : String
     let ageRange : AgeRange
 }
 
-struct Edition {
+struct Edition  :Codable{
     let tournament : Tournament
     let season : String
     let teams : [Team]
 }
-struct MatchDay {
+struct MatchDay : Codable {
     let edition : Edition
     let number : Int
     let phase : String
 }
 
-struct Game {
+struct Game : Codable {
     let matchDay : MatchDay
     let homeTeam : Team
     let visitorTeam : Team
