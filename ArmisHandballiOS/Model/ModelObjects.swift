@@ -73,3 +73,10 @@ struct SystemUser : Codable {
     let favoriteTeams : [Team]
     let favoriteTournaments : [Team]
 }
+
+struct GoalRecord : Codable {
+    let athlete : Athlete
+    let team : Team
+    let game : Game
+    let count : Int 
+}
