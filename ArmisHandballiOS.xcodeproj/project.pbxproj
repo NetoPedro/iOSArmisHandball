@@ -15,11 +15,7 @@
 		660570CE1F34BAC000D5E053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660570CC1F34BAC000D5E053 /* LaunchScreen.storyboard */; };
 		660570D91F34BAC000D5E053 /* ArmisHandballiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570D81F34BAC000D5E053 /* ArmisHandballiOSTests.swift */; };
 		660570E41F34BAC000D5E053 /* ArmisHandballiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570E31F34BAC000D5E053 /* ArmisHandballiOSUITests.swift */; };
-		660570F51F34BB4D00D5E053 /* Athele.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570F41F34BB4D00D5E053 /* Athele.swift */; };
-		660570F71F34CF5B00D5E053 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570F61F34CF5B00D5E053 /* Team.swift */; };
-		660570F91F34D04800D5E053 /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570F81F34D04800D5E053 /* Nationality.swift */; };
-		660570FB1F34D0E600D5E053 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570FA1F34D0E600D5E053 /* Club.swift */; };
-		660570FD1F34D36100D5E053 /* AgeRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570FC1F34D36100D5E053 /* AgeRange.swift */; };
+		660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570FE1F38F99A00D5E053 /* ModelObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +50,7 @@
 		660570DF1F34BAC000D5E053 /* ArmisHandballiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArmisHandballiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		660570E31F34BAC000D5E053 /* ArmisHandballiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmisHandballiOSUITests.swift; sourceTree = "<group>"; };
 		660570E51F34BAC000D5E053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		660570F41F34BB4D00D5E053 /* Athele.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athele.swift; sourceTree = "<group>"; };
-		660570F61F34CF5B00D5E053 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		660570F81F34D04800D5E053 /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
-		660570FA1F34D0E600D5E053 /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
-		660570FC1F34D36100D5E053 /* AgeRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRange.swift; sourceTree = "<group>"; };
+		660570FE1F38F99A00D5E053 /* ModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,11 +134,7 @@
 		660570F11F34BAFE00D5E053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				660570F41F34BB4D00D5E053 /* Athele.swift */,
-				660570F61F34CF5B00D5E053 /* Team.swift */,
-				660570F81F34D04800D5E053 /* Nationality.swift */,
-				660570FA1F34D0E600D5E053 /* Club.swift */,
-				660570FC1F34D36100D5E053 /* AgeRange.swift */,
+				660570FE1F38F99A00D5E053 /* ModelObjects.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,13 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */,
 				660570C61F34BAC000D5E053 /* SecondViewController.swift in Sources */,
 				660570C21F34BABF00D5E053 /* AppDelegate.swift in Sources */,
-				660570F51F34BB4D00D5E053 /* Athele.swift in Sources */,
-				660570FD1F34D36100D5E053 /* AgeRange.swift in Sources */,
-				660570FB1F34D0E600D5E053 /* Club.swift in Sources */,
-				660570F71F34CF5B00D5E053 /* Team.swift in Sources */,
-				660570F91F34D04800D5E053 /* Nationality.swift in Sources */,
 				660570C41F34BAC000D5E053 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
