@@ -33,10 +33,11 @@ struct Club : Codable {
     let nationality:String
     let name:String
     let taxNumber : String
-    let clubType : String
+    let isNational : Bool
 }
 
 struct AgeRange : Codable {
+    let name : String
     let lowerLimit : Int
     let upperLimit : Int
 }
@@ -64,4 +65,11 @@ struct Game : Codable {
     let visitorTeam : Team
     let homeTeamScore : Int
     let visitorTeamScore : Int
+}
+
+struct SystemUser : Codable {
+    let name : String
+    let role : String?
+    let favoriteTeams : [Team]
+    let favoriteTournaments : [Team]
 }
