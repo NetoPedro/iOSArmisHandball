@@ -16,6 +16,9 @@
 		660570D91F34BAC000D5E053 /* ArmisHandballiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570D81F34BAC000D5E053 /* ArmisHandballiOSTests.swift */; };
 		660570E41F34BAC000D5E053 /* ArmisHandballiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570E31F34BAC000D5E053 /* ArmisHandballiOSUITests.swift */; };
 		660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660570FE1F38F99A00D5E053 /* ModelObjects.swift */; };
+		660571011F42343600D5E053 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571001F42343600D5E053 /* GameView.swift */; };
+		660571031F42444D00D5E053 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571021F42444D00D5E053 /* GamesView.swift */; };
+		660571051F44AF5200D5E053 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571041F44AF5200D5E053 /* SearchViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		660570E31F34BAC000D5E053 /* ArmisHandballiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmisHandballiOSUITests.swift; sourceTree = "<group>"; };
 		660570E51F34BAC000D5E053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660570FE1F38F99A00D5E053 /* ModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObjects.swift; sourceTree = "<group>"; };
+		660571001F42343600D5E053 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		660571021F42444D00D5E053 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		660571041F44AF5200D5E053 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				660570CA1F34BAC000D5E053 /* Assets.xcassets */,
 				660570CC1F34BAC000D5E053 /* LaunchScreen.storyboard */,
 				660570CF1F34BAC000D5E053 /* Info.plist */,
+				660571001F42343600D5E053 /* GameView.swift */,
+				660571021F42444D00D5E053 /* GamesView.swift */,
+				660571041F44AF5200D5E053 /* SearchViewCell.swift */,
 			);
 			path = ArmisHandballiOS;
 			sourceTree = "<group>";
@@ -270,7 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660571031F42444D00D5E053 /* GamesView.swift in Sources */,
+				660571051F44AF5200D5E053 /* SearchViewCell.swift in Sources */,
 				660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */,
+				660571011F42343600D5E053 /* GameView.swift in Sources */,
 				660570C61F34BAC000D5E053 /* SecondViewController.swift in Sources */,
 				660570C21F34BABF00D5E053 /* AppDelegate.swift in Sources */,
 				660570C41F34BAC000D5E053 /* FirstViewController.swift in Sources */,
