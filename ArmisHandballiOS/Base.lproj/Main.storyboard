@@ -112,15 +112,15 @@
         <!--Search-->
         <scene sceneID="xu8-C8-fR5">
             <objects>
-                <tableViewController id="zsi-Vm-PvD" sceneMemberID="viewController">
+                <tableViewController id="zsi-Vm-PvD" customClass="SearchViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wZQ-A6-78k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="A9U-9O-S16">
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="A9U-9O-S16">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchView" id="oSe-pW-D0f" customClass="SearchViewCell" customModule="ArmisHandballiOS" customModuleProvider="target">
@@ -156,6 +156,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Search" id="CFk-js-q7c"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="A9U-9O-S16" id="1fE-tT-Sl0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFf-oW-W0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

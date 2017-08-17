@@ -80,3 +80,8 @@ struct GoalRecord : Codable {
     let game : Game
     let count : Int 
 }
+
+struct Searchable : Codable {
+    let name : String
+    let icon : Data
+}

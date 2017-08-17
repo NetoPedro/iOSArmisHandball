@@ -1,53 +1,31 @@
 //
-//  GamesView.swift
+//  SearchViewController.swift
 //  ArmisHandballiOS
 //
-//  Created by Pedro Neto on 14/08/17.
+//  Created by Pedro Neto on 17/08/17.
 //  Copyright © 2017 Pedro Neto. All rights reserved.
 //
 
 import UIKit
 
-class GamesView: UITableViewController {
-    
-    //MARK: Properties
-    
-    var games = [Game]()
-    
-    private func loadGames(){
-      //Fill with URL address 
-        guard let url = URL(string: "http://localhost:8080/api/games/1") else {return}
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, response, error) in
-            guard let response = response else {
-                return
-            }
-            print(response)
-            guard let error = error else {
-                return
-            }
-            print(error)
+class SearchViewController: UITableViewController, UISearchBarDelegate {
 
-            if let data = data {
-                self.games.removeAll()
-                do{
-                    let newGames = try  JSONDecoder().decode([Game].self, from: data)
-                    self.games += newGames
-                }
-                catch{
-                    print("Unable to decode")
-                }
-            }
-        }.resume()
+    var searchables = [Searchable]()
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    func loadSearchable(){
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Receive games from the server
-        loadGames()
+        searchBar.delegate = self
+        loadSearchable();
     }
-
+   func searchBarSearchButtonClicked( searchBar: UISearchBar!){
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,29 +34,23 @@ class GamesView: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
-        //Check possible more sections
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return self.searchables.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameView", for: indexPath) as? GameView else {
-          fatalError("The dequeued cell is not an instance of GameView")
-        }
-        let game = games[indexPath.row]
-        cell.homeTeamName.text = game.homeTeam.club.name
-        cell.visitorsTeamName.text = game.visitorTeam.club.name
-        cell.homeTeamScore.text = String(game.homeTeamScore)
-        cell.visitorsTeamScore.text = String(game.visitorTeamScore)
-        cell.game = game
-        // fill cell with logos
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell", for: indexPath) as? SearchViewCell else {fatalError()}
+        let searchable = searchables[indexPath.row]
+        cell.searchItemIcon.image = UIImage(data: searchable.icon)
+        cell.searchItemName.text = searchable.name
+
         return cell
     }
-
+    
 
     /*
     // Override to support conditional editing of the table view.
