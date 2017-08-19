@@ -15,8 +15,7 @@ class GamesView: UITableViewController {
     var games = [Game]()
     
     private func loadGames(){
-      //Fill with URL address 
-        guard let url = URL(string: "http://localhost:8080/api/games/1") else {return}
+        guard let url = URL(string: "http://localhost:8080/api/games") else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {

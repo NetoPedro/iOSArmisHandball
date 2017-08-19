@@ -14,17 +14,49 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
-    func loadSearchable(){
-    }
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.delegate = self
-        loadSearchable();
+        self.searchBar.delegate = self
     }
-   func searchBarSearchButtonClicked( searchBar: UISearchBar!){
-        
+    
+    func doSearch(){
+        print("Ola")
+        guard let text = searchBar.text else {return}
+        print("OI")
+        guard let url = URL(string: "http://192.168.100.14:52955/api/Searchable?name=\(text)") else {return}
+        print(url)
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            guard let response = response else {
+                return
+            }
+            print(response)
+            guard let error = error else {
+                return
+            }
+            print(error)
+            
+            if let data = data {
+                self.searchables.removeAll()
+                do{
+                    let newItems = try  JSONDecoder().decode([Searchable].self, from: data)
+                    self.searchables += newItems
+                    
+                }
+                catch{
+                    print("Unable to decode")
+                }
+            }
+            }.resume()
+    }
+    
+    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar){
+        doSearch()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        doSearch()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

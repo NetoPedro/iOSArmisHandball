@@ -20,6 +20,7 @@
 		660571031F42444D00D5E053 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571021F42444D00D5E053 /* GamesView.swift */; };
 		660571051F44AF5200D5E053 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571041F44AF5200D5E053 /* SearchViewCell.swift */; };
 		660571071F462F8700D5E053 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571061F462F8700D5E053 /* SearchViewController.swift */; };
+		660571091F48E29A00D5E053 /* GoalsScoredViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571081F48E29A00D5E053 /* GoalsScoredViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		660571021F42444D00D5E053 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		660571041F44AF5200D5E053 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		660571061F462F8700D5E053 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		660571081F48E29A00D5E053 /* GoalsScoredViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScoredViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				660571021F42444D00D5E053 /* GamesView.swift */,
 				660571041F44AF5200D5E053 /* SearchViewCell.swift */,
 				660571061F462F8700D5E053 /* SearchViewController.swift */,
+				660571081F48E29A00D5E053 /* GoalsScoredViewCell.swift */,
 			);
 			path = ArmisHandballiOS;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				660571031F42444D00D5E053 /* GamesView.swift in Sources */,
 				660571051F44AF5200D5E053 /* SearchViewCell.swift in Sources */,
 				660571071F462F8700D5E053 /* SearchViewController.swift in Sources */,
+				660571091F48E29A00D5E053 /* GoalsScoredViewCell.swift in Sources */,
 				660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */,
 				660571011F42343600D5E053 /* GameView.swift in Sources */,
 				660570C61F34BAC000D5E053 /* SecondViewController.swift in Sources */,

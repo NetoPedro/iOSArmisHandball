@@ -84,4 +84,5 @@ struct GoalRecord : Codable {
 struct Searchable : Codable {
     let name : String
     let icon : Data
+    let type : String 
 }
