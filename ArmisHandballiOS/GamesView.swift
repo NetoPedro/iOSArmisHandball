@@ -69,11 +69,13 @@ class GamesView: UITableViewController {
           fatalError("The dequeued cell is not an instance of GameView")
         }
         let game = games[indexPath.row]
-        cell.homeTeamName.text = game.homeTeam.club.name
-        cell.visitorsTeamName.text = game.visitorTeam.club.name
-        cell.homeTeamScore.text = String(game.homeTeamScore)
-        cell.visitorsTeamScore.text = String(game.visitorTeamScore)
+        cell.homeTeamName.text = game.homeClubName
+        cell.visitorsTeamName.text = game.visitorClubName
+        cell.homeTeamScore.text = String(game.homeTeamResult)
+        cell.visitorsTeamScore.text = String(game.visitorTeamResult)
         cell.game = game
+        cell.homeTeamLogo.image = UIImage(data : game.homeClubLogo)
+        cell.visitorsTeamLogo.image = UIImage(data: game.visitorClubLogo)
         // fill cell with logos
         return cell
     }
