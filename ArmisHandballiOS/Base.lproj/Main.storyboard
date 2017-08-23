@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Games View-->
         <scene sceneID="Eh6-7W-0r2">
             <objects>
                 <tableViewController id="E0a-ya-gUB" customClass="GamesView" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,6 +77,7 @@
                                     <outlet property="visitorsTeamLogo" destination="bNB-aR-vcc" id="N6t-e9-bxb"/>
                                     <outlet property="visitorsTeamName" destination="Ocj-U0-cvY" id="yaP-Xv-moV"/>
                                     <outlet property="visitorsTeamScore" destination="eId-ly-qeZ" id="Pfg-9C-jmq"/>
+                                    <segue destination="Fbo-h3-0jS" kind="show" id="OUN-gK-6vO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -85,27 +86,28 @@
                             <outlet property="delegate" destination="E0a-ya-gUB" id="C8c-FW-NYE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Home" id="cYS-WT-bEM"/>
+                    <navigationItem key="navigationItem" id="LvG-qm-M8u"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-V5-cV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501.5999999999999" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="2270" y="-322"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0Ri-MU-Tbp">
             <objects>
-                <viewController id="Fbo-h3-0jS" sceneMemberID="viewController">
-                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="MvZ-JG-FLd">
+                <viewController storyboardIdentifier="GameStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fbo-h3-0jS" sceneMemberID="viewController">
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" id="MvZ-JG-FLd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3L-vf-2xW" userLabel="GameInfoView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3L-vf-2xW" userLabel="GameInfoView" customClass="GameView" customModule="ArmisHandballiOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <viewLayoutGuide key="safeArea" id="Abq-qH-SZL"/>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPj-Ja-bq6" userLabel="GameGoalsView">
-                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPj-Ja-bq6" userLabel="GameGoalsView">
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
                                 <connections>
                                     <segue destination="eT8-s3-Wsx" kind="embed" id="E1t-ml-N2M"/>
                                 </connections>
@@ -116,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fO4-S9-dle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2408.8000000000002" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="3071" y="-322"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="Zyp-Q3-VCj">
@@ -201,7 +203,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Qdm-cF-aqu" kind="relationship" relationship="viewControllers" id="VD4-tU-Hz6"/>
-                        <segue destination="E0a-ya-gUB" kind="relationship" relationship="viewControllers" id="0pi-ay-SB3"/>
+                        <segue destination="cxW-UD-im0" kind="relationship" relationship="viewControllers" id="0pi-ay-SB3"/>
                         <segue destination="zsi-Vm-PvD" kind="relationship" relationship="viewControllers" id="1dQ-jS-BG4"/>
                     </connections>
                 </tabBarController>
@@ -212,9 +214,9 @@
         <!--Goals Scored View Controller-->
         <scene sceneID="hux-2g-q6I">
             <objects>
-                <tableViewController id="eT8-s3-Wsx" customClass="GoalsScoredViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GoalsRecord " useStoryboardIdentifierAsRestorationIdentifier="YES" id="eT8-s3-Wsx" customClass="GoalsScoredViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A7S-Pv-cT7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="539"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -261,6 +263,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4y-G7-UUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="411.544227886057"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="YKH-7G-ehw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cxW-UD-im0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="cYS-WT-bEM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nCn-HD-Nzu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E0a-ya-gUB" kind="relationship" relationship="rootViewController" id="ZgJ-7q-RrS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nj3-6J-2Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500.8" y="-322.03898050974516"/>
         </scene>
     </scenes>
 </document>

@@ -40,6 +40,20 @@ struct Game : Codable {
     let homeClubLogo: Data
     let visitorClubLogo : Data
     let date : String
+    
+    init(){
+        pk = 1 ;
+        matchDay = "MatchDay"
+        homeTeamPk = 0
+        visitorTeamPk = 1
+        homeClubName = "HomeName"
+        homeTeamResult = 2
+        homeClubLogo = Data(count: 10)
+        visitorClubName = "VisitorName"
+        visitorTeamResult = 1
+        visitorClubLogo = Data(count: 10)
+        date = "date"
+    }
 }
 
 
