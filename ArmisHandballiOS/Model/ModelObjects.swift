@@ -10,90 +10,49 @@ import Foundation
 
 
 struct Athlete :Codable {
-    let pk : String
-    let name : String
-    let IDNumber : String
-    let gender : String
-    let age : Int
-    let nationalTeam : Team?
-    let localTeam : Team
-    let nationality : Nationality
-}
-
-struct Team :  Codable {
-    let pk : String
-    let gender : String
-    let club : Club
-    let ageRange : AgeRange
-}
-
-struct Nationality : Codable {
-    let pk : String
-    let name : String
-}
-
-struct Club : Codable {
-    let pk : String
-    let nationality:String
-    let name:String
-    let taxNumber : String
-    let isNational : Bool
-}
-
-struct AgeRange : Codable {
-    let pk : String
-    let name : String
-    let lowerLimit : Int
-    let upperLimit : Int
-}
-
-struct Tournament :  Codable{
-    let pk : String
+    let pk : Int
     let name : String
     let gender : String
-    let ageRange : AgeRange
+    let clubName : String
+    let nationality : String
+    let photo : Data
+    let teamPk : Int
 }
 
 struct Edition  :Codable{
-    let pk : String
-    let tournament : Tournament
+    let pk : Int
     let season : String
-    let teams : [Team]
 }
 struct MatchDay : Codable {
-    let pk : String
-    let edition : Edition
-    let number : Int
-    let phase : String
+    let pk : Int
+    let name : String
 }
 
 struct Game : Codable {
-    let pk : String
-    let matchDay : MatchDay
-    let homeTeam : Team
-    let visitorTeam : Team
-    let homeTeamScore : Int
-    let visitorTeamScore : Int
+    let pk : Int
+    let matchDay : String
+    let homeTeamPk : Int
+    let visitorTeamPk : Int
+    let homeClubName : String
+    let visitorClubName : String
+    let homeTeamResult : Int
+    let visitorTeamResult : Int
+    let homeClubLogo: Data
+    let visitorClubLogo : Data
+    let date : String
 }
 
-struct SystemUser : Codable {
-    let pk : String
-    let name : String
-    let role : String?
-    let favoriteTeams : [Team]
-    let favoriteTournaments : [Team]
-}
 
 struct GoalRecord : Codable {
-    let pk : String
-    let athlete : Athlete
-    let team : Team
-    let game : Game
-    let count : Int 
+    let pk : Int
+    let athleteName : String
+    let athletePhoto : Data
+    let team : Int
+    let count : Int
 }
 
 struct Searchable : Codable {
-    let pk : String
+    let pk : Int
     let name : String
     let icon : Data
     let type : String 

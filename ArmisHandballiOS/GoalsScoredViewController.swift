@@ -1,63 +1,25 @@
 //
-//  SearchViewController.swift
+//  GoalsScoredViewController.swift
 //  ArmisHandballiOS
 //
-//  Created by Pedro Neto on 17/08/17.
+//  Created by Pedro Neto on 19/08/17.
 //  Copyright © 2017 Pedro Neto. All rights reserved.
 //
 
 import UIKit
 
-class SearchViewController: UITableViewController, UISearchBarDelegate {
-
-    var searchables = [Searchable]()
+class GoalsScoredViewController: UITableViewController {
+    var goalRecords = [GoalRecord]()
+    var game : Game? = nil
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
- 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.searchBar.delegate = self
+
+
+        //Receber o jogo por parametro
+        //WebServices para ir buscar info do jogo
     }
-    
-    func doSearch(){
-        print("Ola")
-        guard let text = searchBar.text else {return}
-        print("OI")
-        guard let url = URL(string: "http://192.168.100.14/Armis/api/Searchable?name=\(text)") else {return}
-        print(url)
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, response, error) in
-            guard let response = response else {
-                return
-            }
-            print(response)
-            guard let error = error else {
-                return
-            }
-            print(error)
-            
-            if let data = data {
-                self.searchables.removeAll()
-                do{
-                    let newItems = try  JSONDecoder().decode([Searchable].self, from: data)
-                    self.searchables += newItems
-                    
-                }
-                catch{
-                    print("Unable to decode")
-                }
-            }
-            }.resume()
-    }
-    
-    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar){
-        doSearch()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
-        doSearch()
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -70,19 +32,20 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchables.count
+        if game == nil {return 0}
+        // Rest Request to return a list of gameRecords of the game
+        return goalRecords.count
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell", for: indexPath) as? SearchViewCell else {fatalError()}
-        let searchable = searchables[indexPath.row]
-        cell.searchItemIcon.image = UIImage(data: searchable.icon)
-        cell.searchItemName.text = searchable.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
