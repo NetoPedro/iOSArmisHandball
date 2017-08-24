@@ -47,10 +47,23 @@ struct Game : Codable {
         homeTeamPk = 0
         visitorTeamPk = 1
         homeClubName = "HomeName"
-        homeTeamResult = 2
+        homeTeamResult = 21
         homeClubLogo = Data(count: 10)
         visitorClubName = "VisitorName"
-        visitorTeamResult = 1
+        visitorTeamResult = 80
+        visitorClubLogo = Data(count: 10)
+        date = "date"
+    }
+    init(type:Int ){
+        pk = 1 ;
+        matchDay = "MatchDay"
+        homeTeamPk = 0
+        visitorTeamPk = 1
+        homeClubName = "Type2"
+        homeTeamResult = 10
+        homeClubLogo = Data(count: 10)
+        visitorClubName = "Type2"
+        visitorTeamResult = 20
         visitorClubLogo = Data(count: 10)
         date = "date"
     }

@@ -117,6 +117,7 @@
 			children = (
 				660570F11F34BAFE00D5E053 /* Model */,
 				660570C11F34BABF00D5E053 /* AppDelegate.swift */,
+				661426E11F4DF73F00706ECF /* GameStoryboardView.swift */,
 				660570C31F34BAC000D5E053 /* FirstViewController.swift */,
 				660570C51F34BAC000D5E053 /* SecondViewController.swift */,
 				660570C71F34BAC000D5E053 /* Main.storyboard */,
@@ -155,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				660570FE1F38F99A00D5E053 /* ModelObjects.swift */,
-				661426E11F4DF73F00706ECF /* GameStoryboardView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

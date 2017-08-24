@@ -39,6 +39,34 @@ class GamesView: UITableViewController {
             }
         }.resume()*/
         games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
     }
     
     override func viewDidLoad() {
@@ -82,6 +110,10 @@ class GamesView: UITableViewController {
     }
 
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40 ;
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
