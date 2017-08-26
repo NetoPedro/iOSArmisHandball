@@ -12,10 +12,14 @@ class GoalsScoredViewController: UITableViewController {
     var goalRecords = [GoalRecord]()
     var game : Game? = nil
     
+    func loadData(){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        loadData()
         //Receber o jogo por parametro
         //WebServices para ir buscar info do jogo
     }

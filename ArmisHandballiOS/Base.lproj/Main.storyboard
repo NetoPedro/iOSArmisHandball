@@ -131,6 +131,9 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BJZ-qe-rck" userLabel="GameGoalsView">
                                 <rect key="frame" x="0.0" y="269" width="414" height="418"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="eT8-s3-Wsx" kind="embed" identifier="gameScoreContainerSegue" id="ZUV-LA-4em"/>
+                                </connections>
                             </containerView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSj-Wv-gbl">
                                 <rect key="frame" x="20" y="85" width="374" height="151"/>
@@ -173,7 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="X43-SX-jal"/>
                     </view>
                     <connections>
-                        <outlet property="gameScoresView" destination="wSj-Wv-gbl" id="lV1-MU-VDD"/>
+                        <outlet property="gameScoresView" destination="BJZ-qe-rck" id="7Ui-Ga-fgI"/>
                         <outlet property="homeLogo" destination="JsI-hG-Pnj" id="seU-37-UUE"/>
                         <outlet property="homeScore" destination="Adw-2h-72o" id="NTg-6j-5Uy"/>
                         <outlet property="visitorsLogo" destination="WBP-l7-Wj3" id="kbf-fz-HDK"/>
@@ -280,7 +283,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="GoalsRecord " useStoryboardIdentifierAsRestorationIdentifier="YES" id="eT8-s3-Wsx" customClass="GoalsScoredViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A7S-Pv-cT7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="418"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

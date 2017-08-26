@@ -10,11 +10,12 @@ import UIKit
 
 class GameInfoView: UIViewController {
 
-    @IBOutlet weak var gameScoresView: UIView!
     @IBOutlet weak var homeLogo: UIImageView!
     @IBOutlet weak var visitorsLogo: UIImageView!
     @IBOutlet weak var visitorsScore: UILabel!
     @IBOutlet weak var homeScore: UILabel!
+    @IBOutlet weak var gameScoresView: UIView!
+    var containersViewController : GoalsScoredViewController?
     var game : Game?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,13 @@ class GameInfoView: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameScoreContainerSegue" {
+            containersViewController = segue.destination as? GoalsScoredViewController
+            containersViewController?.game = game
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
