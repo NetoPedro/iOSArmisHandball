@@ -5,13 +5,11 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Games View-->
+        <!--Home-->
         <scene sceneID="Eh6-7W-0r2">
             <objects>
                 <tableViewController id="E0a-ya-gUB" customClass="GamesView" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,72 +24,62 @@
                             <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="blue" indentationLevel="200" indentationWidth="100" shouldIndentWhileEditing="NO" reuseIdentifier="GameView" rowHeight="40" id="Rtd-e3-oaM" customClass="GameView" customModule="ArmisHandballiOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rtd-e3-oaM" id="bhE-IE-rXd">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rtd-e3-oaM" id="bhE-IE-rXd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="39.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Srh-eo-7xE">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Srh-eo-7xE">
                                             <rect key="frame" x="0.0" y="0.0" width="435" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gP-Mf-7m2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="BGF-5V-h7Y"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gP-Mf-7m2">
+                                                    <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=":" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-xf-Uib">
-                                                    <rect key="frame" x="192" y="13" width="11" height="15"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="10" id="odR-kQ-iXv"/>
-                                                    </constraints>
+                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-xf-Uib">
+                                                    <rect key="frame" x="205" y="13" width="11" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HomeScore" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2l-1n-hKW">
-                                                    <rect key="frame" x="164" y="10" width="25" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HomeScore" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2l-1n-hKW">
+                                                    <rect key="frame" x="175" y="9.6666666666666643" width="25" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" adjustable="YES"/>
                                                     </accessibility>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="6Ug-XN-1gf"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="VisitorsScore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eId-ly-qeZ">
-                                                    <rect key="frame" x="207" y="10" width="25" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VisitorsScore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eId-ly-qeZ">
+                                                    <rect key="frame" x="220" y="9.6666666666666643" width="25" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" adjustable="YES"/>
                                                     </accessibility>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="Urd-iQ-mmn"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNB-aR-vcc">
-                                                    <rect key="frame" x="371" y="0.0" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="1Ju-ne-EYd"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNB-aR-vcc">
+                                                    <rect key="frame" x="380" y="5" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HomeTeam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztm-36-GmO" userLabel="HomeTeam">
-                                                    <rect key="frame" x="45" y="10" width="120" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HomeTeam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztm-36-GmO" userLabel="HomeTeam">
+                                                    <rect key="frame" x="53" y="9.6666666666666643" width="120" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" adjustable="YES"/>
                                                     </accessibility>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="Mou-Vf-HGa"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="VisitorsTeam" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocj-U0-cvY">
-                                                    <rect key="frame" x="243" y="8" width="120" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VisitorsTeam" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocj-U0-cvY">
+                                                    <rect key="frame" x="255" y="8" width="120" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" adjustable="YES"/>
                                                     </accessibility>
@@ -101,36 +89,9 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="7gP-Mf-7m2" firstAttribute="top" secondItem="bNB-aR-vcc" secondAttribute="top" id="0zz-72-giM"/>
-                                                <constraint firstItem="U2l-1n-hKW" firstAttribute="leading" secondItem="ztm-36-GmO" secondAttribute="trailing" id="9xT-u7-wKP"/>
-                                                <constraint firstItem="U2l-1n-hKW" firstAttribute="centerY" secondItem="5Hj-xf-Uib" secondAttribute="centerY" id="Hb4-AA-0Ct"/>
-                                                <constraint firstItem="ztm-36-GmO" firstAttribute="baseline" secondItem="U2l-1n-hKW" secondAttribute="baseline" id="Nfz-dc-gSn"/>
-                                                <constraint firstItem="ztm-36-GmO" firstAttribute="leading" secondItem="7gP-Mf-7m2" secondAttribute="trailing" id="TZT-Oz-vdT"/>
-                                                <constraint firstItem="7gP-Mf-7m2" firstAttribute="centerY" secondItem="ztm-36-GmO" secondAttribute="centerY" id="TrI-iZ-bcI"/>
-                                                <constraint firstAttribute="bottom" secondItem="7gP-Mf-7m2" secondAttribute="bottom" id="Y76-nJ-pjg"/>
-                                                <constraint firstAttribute="trailing" secondItem="bNB-aR-vcc" secondAttribute="trailing" id="Yj7-Fy-TbW"/>
-                                                <constraint firstItem="ztm-36-GmO" firstAttribute="firstBaseline" secondItem="U2l-1n-hKW" secondAttribute="firstBaseline" id="dfk-aA-yi1"/>
-                                                <constraint firstItem="Ocj-U0-cvY" firstAttribute="leading" secondItem="eId-ly-qeZ" secondAttribute="trailing" constant="11" id="jBV-vF-hr8"/>
-                                                <constraint firstItem="7gP-Mf-7m2" firstAttribute="leading" secondItem="Srh-eo-7xE" secondAttribute="leading" constant="5" id="odJ-Pp-S1h"/>
-                                                <constraint firstItem="7gP-Mf-7m2" firstAttribute="bottom" secondItem="bNB-aR-vcc" secondAttribute="bottom" id="qHh-BS-16G"/>
-                                                <constraint firstItem="bNB-aR-vcc" firstAttribute="leading" secondItem="Ocj-U0-cvY" secondAttribute="trailing" constant="8" symbolic="YES" id="ri7-ou-qda"/>
-                                                <constraint firstItem="5Hj-xf-Uib" firstAttribute="leading" secondItem="U2l-1n-hKW" secondAttribute="trailing" constant="5" id="s0h-8d-xVi"/>
-                                                <constraint firstItem="5Hj-xf-Uib" firstAttribute="top" secondItem="Srh-eo-7xE" secondAttribute="top" constant="13" id="swQ-Gp-Nak"/>
-                                                <constraint firstItem="U2l-1n-hKW" firstAttribute="baseline" secondItem="eId-ly-qeZ" secondAttribute="baseline" id="tFG-sT-Znw"/>
-                                                <constraint firstItem="7gP-Mf-7m2" firstAttribute="top" secondItem="Srh-eo-7xE" secondAttribute="top" id="v5v-iv-7OV"/>
-                                                <constraint firstItem="eId-ly-qeZ" firstAttribute="leading" secondItem="5Hj-xf-Uib" secondAttribute="trailing" constant="5" id="vdg-KM-FfH"/>
-                                            </constraints>
                                         </view>
                                     </subviews>
                                     <rect key="contentStretch" x="1" y="0.0" width="0.0" height="0.0"/>
-                                    <constraints>
-                                        <constraint firstItem="Srh-eo-7xE" firstAttribute="leading" secondItem="bhE-IE-rXd" secondAttribute="leading" id="C1g-N1-UMa"/>
-                                        <constraint firstItem="Srh-eo-7xE" firstAttribute="top" secondItem="bhE-IE-rXd" secondAttribute="top" id="Njt-GT-Ibu"/>
-                                        <constraint firstItem="Srh-eo-7xE" firstAttribute="centerY" secondItem="bhE-IE-rXd" secondAttribute="centerY" id="SIL-6a-Dgh"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Srh-eo-7xE" secondAttribute="trailing" constant="-29" id="vhK-Dk-ZnV"/>
-                                        <constraint firstAttribute="trailing" secondItem="Srh-eo-7xE" secondAttribute="leading" id="w0h-Iw-ycG"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.96240831739598776" green="0.97870790155440412" blue="0.97229092856492727" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -141,7 +102,7 @@
                                     <outlet property="visitorsTeamLogo" destination="bNB-aR-vcc" id="N6t-e9-bxb"/>
                                     <outlet property="visitorsTeamName" destination="Ocj-U0-cvY" id="yaP-Xv-moV"/>
                                     <outlet property="visitorsTeamScore" destination="eId-ly-qeZ" id="Pfg-9C-jmq"/>
-                                    <segue destination="feO-Wt-V41" kind="show" id="83T-6r-rC4"/>
+                                    <segue destination="feO-Wt-V41" kind="show" identifier="gameInfo" id="83T-6r-rC4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -150,17 +111,19 @@
                             <outlet property="delegate" destination="E0a-ya-gUB" id="C8c-FW-NYE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="LvG-qm-M8u"/>
+                    <navigationItem key="navigationItem" title="Home" id="LvG-qm-M8u">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="ac1-f3-AWe"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-V5-cV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2266.666666666667" y="-323.64130434782612"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Info View-->
         <scene sceneID="XK1-k4-Ptq">
             <objects>
-                <viewController id="feO-Wt-V41" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameInfoView" id="feO-Wt-V41" customClass="GameInfoView" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="89D-pp-0e0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,14 +144,14 @@
                                         <rect key="frame" x="273" y="20" width="93" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HomeScore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-2h-72o">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HomeScore" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-2h-72o">
                                         <rect key="frame" x="109" y="65" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VisitorScore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67X-nL-LQr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VisitorScore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67X-nL-LQr">
                                         <rect key="frame" x="223" y="64" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -209,12 +172,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="X43-SX-jal"/>
                     </view>
+                    <connections>
+                        <outlet property="gameScoresView" destination="wSj-Wv-gbl" id="lV1-MU-VDD"/>
+                        <outlet property="homeLogo" destination="JsI-hG-Pnj" id="seU-37-UUE"/>
+                        <outlet property="homeScore" destination="Adw-2h-72o" id="NTg-6j-5Uy"/>
+                        <outlet property="visitorsLogo" destination="WBP-l7-Wj3" id="kbf-fz-HDK"/>
+                        <outlet property="visitorsScore" destination="67X-nL-LQr" id="cX2-2f-XbP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgq-Ci-O0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3282.608695652174" y="-323.64130434782612"/>
         </scene>
-        <!--Favorites-->
+        <!--View Controller-->
         <scene sceneID="Zyp-Q3-VCj">
             <objects>
                 <viewController id="Qdm-cF-aqu" sceneMemberID="viewController">
@@ -224,14 +194,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="xEn-Ag-tNV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="hgb-eH-nt0"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="hgb-eH-nt0"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfX-JC-4xl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26" y="786"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="xu8-C8-fR5">
             <objects>
                 <tableViewController id="zsi-Vm-PvD" customClass="SearchViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -276,7 +246,7 @@
                             <outlet property="delegate" destination="zsi-Vm-PvD" id="RUf-OC-wN9"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Search" id="CFk-js-q7c"/>
+                    <tabBarItem key="tabBarItem" selectedImage="search" systemItem="search" id="CFk-js-q7c"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="A9U-9O-S16" id="1fE-tT-Sl0"/>
@@ -358,11 +328,11 @@
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="411.544227886057"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="YKH-7G-ehw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cxW-UD-im0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="cYS-WT-bEM"/>
+                    <tabBarItem key="tabBarItem" badgeValue="Home" systemItem="mostRecent" id="cYS-WT-bEM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nCn-HD-Nzu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -378,4 +348,7 @@
             <point key="canvasLocation" x="1500.8" y="-322.03898050974516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search" width="60" height="64"/>
+    </resources>
 </document>

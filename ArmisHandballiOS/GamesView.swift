@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import os.log
 
 class GamesView: UITableViewController {
     
     //MARK: Properties
     
     var games = [Game]()
-    
+    var game = Game()
     private func loadGames(){
       /*  guard let url = URL(string: "http://192.168.100.14/Armis/api/games") else {return}
         let session = URLSession.shared
@@ -76,6 +77,8 @@ class GamesView: UITableViewController {
         loadGames()
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -109,6 +112,26 @@ class GamesView: UITableViewController {
         return cell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+       // guard let view = sender as? GameView else{return}
+       // self.game = view.game!
+        
+        guard let gameInfoController = segue.destination as? GameInfoView else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        
+        guard let selectedCell = sender as? GameView else {
+            fatalError("Unexpected sender: \(sender)")
+        }
+        
+        guard let indexPath = tableView.indexPath(for: selectedCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+        
+        let selectedGame = games[indexPath.row]
+        gameInfoController.game = selectedGame
+    }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40 ;

@@ -23,6 +23,7 @@
 		660571091F48E29A00D5E053 /* GoalsScoredViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660571081F48E29A00D5E053 /* GoalsScoredViewCell.swift */; };
 		6605710B1F48E4D300D5E053 /* GoalsScoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605710A1F48E4D300D5E053 /* GoalsScoredViewController.swift */; };
 		661426E21F4DF73F00706ECF /* GameStoryboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661426E11F4DF73F00706ECF /* GameStoryboardView.swift */; };
+		66DCF09C1F4F54BB0045F866 /* GameInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DCF09B1F4F54BB0045F866 /* GameInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		660571081F48E29A00D5E053 /* GoalsScoredViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScoredViewCell.swift; sourceTree = "<group>"; };
 		6605710A1F48E4D300D5E053 /* GoalsScoredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScoredViewController.swift; sourceTree = "<group>"; };
 		661426E11F4DF73F00706ECF /* GameStoryboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStoryboardView.swift; sourceTree = "<group>"; };
+		66DCF09B1F4F54BB0045F866 /* GameInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				660571061F462F8700D5E053 /* SearchViewController.swift */,
 				660571081F48E29A00D5E053 /* GoalsScoredViewCell.swift */,
 				6605710A1F48E4D300D5E053 /* GoalsScoredViewController.swift */,
+				66DCF09B1F4F54BB0045F866 /* GameInfoView.swift */,
 			);
 			path = ArmisHandballiOS;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				660571091F48E29A00D5E053 /* GoalsScoredViewCell.swift in Sources */,
 				660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */,
 				660571011F42343600D5E053 /* GameView.swift in Sources */,
+				66DCF09C1F4F54BB0045F866 /* GameInfoView.swift in Sources */,
 				661426E21F4DF73F00706ECF /* GameStoryboardView.swift in Sources */,
 				660570C61F34BAC000D5E053 /* SecondViewController.swift in Sources */,
 				6605710B1F48E4D300D5E053 /* GoalsScoredViewController.swift in Sources */,

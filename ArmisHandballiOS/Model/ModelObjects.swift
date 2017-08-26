@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct Athlete :Codable {
     let pk : Int
@@ -42,29 +42,33 @@ struct Game : Codable {
     let date : String
     
     init(){
+        let logo = UIImage(named: "TeamLogo")
+
         pk = 1 ;
         matchDay = "MatchDay"
         homeTeamPk = 0
         visitorTeamPk = 1
-        homeClubName = "HomeName"
+        homeClubName = "Real Madrid"
         homeTeamResult = 21
-        homeClubLogo = Data(count: 10)
-        visitorClubName = "VisitorName"
+        homeClubLogo = (UIImagePNGRepresentation(logo!)! as Data)
+        visitorClubName = "Barcelona"
         visitorTeamResult = 80
-        visitorClubLogo = Data(count: 10)
+        visitorClubLogo = (UIImagePNGRepresentation(logo!)! as Data)
         date = "date"
     }
     init(type:Int ){
+        let logo = UIImage(named: "TeamLogo")
+
         pk = 1 ;
         matchDay = "MatchDay"
         homeTeamPk = 0
         visitorTeamPk = 1
-        homeClubName = "Type2"
+        homeClubName = "ManUnited"
         homeTeamResult = 10
-        homeClubLogo = Data(count: 10)
-        visitorClubName = "Type2"
+        homeClubLogo = (UIImagePNGRepresentation(logo!)! as Data)
+        visitorClubName = "ManCity"
         visitorTeamResult = 20
-        visitorClubLogo = Data(count: 10)
+        visitorClubLogo = (UIImagePNGRepresentation(logo!)! as Data)
         date = "date"
     }
 }
