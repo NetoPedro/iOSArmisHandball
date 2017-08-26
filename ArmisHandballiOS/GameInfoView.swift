@@ -32,7 +32,7 @@ class GameInfoView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gameScoreContainerSegue" {
             containersViewController = segue.destination as? GoalsScoredViewController
-            containersViewController?.game = game
+           containersViewController?.game = game
         }
     }
     

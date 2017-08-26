@@ -80,6 +80,23 @@ struct GoalRecord : Codable {
     let athletePhoto : Data
     let team : Int
     let count : Int
+    
+    init(){
+        let logo = UIImage(named: "TeamLogo")
+        pk = 0
+        athleteName = "Ronaldo"
+        athletePhoto = (UIImagePNGRepresentation(logo!)! as Data)
+        team = 0
+        count = 3
+    }
+    init(type : Int){
+    let logo = UIImage(named: "TeamLogo")
+    pk = 0
+    athleteName = "Messe"
+    athletePhoto = (UIImagePNGRepresentation(logo!)! as Data)
+    team = 1
+    count = 2
+    }
 }
 
 struct Searchable : Codable {

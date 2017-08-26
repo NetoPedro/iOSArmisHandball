@@ -10,10 +10,16 @@ import UIKit
 
 class GoalsScoredViewController: UITableViewController {
     var goalRecords = [GoalRecord]()
-    var game : Game? = nil
+    var game : Game?
     
     func loadData(){
-        
+        goalRecords.append(GoalRecord())
+        goalRecords.append(GoalRecord(type:1))
+        goalRecords.append(GoalRecord(type:2))
+        goalRecords.append(GoalRecord())
+        goalRecords.append(GoalRecord(type:1))
+        goalRecords.append(GoalRecord())
+
     }
     
     override func viewDidLoad() {
@@ -32,7 +38,7 @@ class GoalsScoredViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 1;
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +55,7 @@ class GoalsScoredViewController: UITableViewController {
         cell.playersFaceImage.image = UIImage(data:goalRecord.athletePhoto)
         cell.playersNameLabel.text = goalRecord.athleteName
         cell.numberOfGoalsLabel.text = String(goalRecord.count)
+        if goalRecord.team == 0 {cell.backgroundColor = UIColor.cyan}
         return cell
     }
     
