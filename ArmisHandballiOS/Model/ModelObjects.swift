@@ -54,7 +54,7 @@ struct Game : Codable {
         visitorClubName = "Barcelona"
         visitorTeamResult = 80
         visitorClubLogo = (UIImagePNGRepresentation(logo!)! as Data)
-        date = "date"
+        date = "22-10-2017"
     }
     init(type:Int ){
         let logo = UIImage(named: "TeamLogo")
@@ -69,7 +69,7 @@ struct Game : Codable {
         visitorClubName = "ManCity"
         visitorTeamResult = 20
         visitorClubLogo = (UIImagePNGRepresentation(logo!)! as Data)
-        date = "date"
+        date = "23-10-2017"
     }
 }
 

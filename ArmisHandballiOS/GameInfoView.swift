@@ -10,12 +10,16 @@ import UIKit
 
 class GameInfoView: UIViewController {
 
+    
     @IBOutlet weak var homeLogo: UIImageView!
     @IBOutlet weak var visitorsLogo: UIImageView!
     @IBOutlet weak var visitorsScore: UILabel!
     @IBOutlet weak var homeScore: UILabel!
-    @IBOutlet weak var gameScoresView: UIView!
-    var containersViewController : GoalsScoredViewController?
+    @IBOutlet weak var homeGameScoresView: UIView!
+    @IBOutlet weak var visitorsGameScoreView: UIView!
+    var homeContainersViewController : GoalsScoredViewController?
+    var visitorsContainersViewController : GoalsScoredViewController?
+
     var game : Game?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +34,14 @@ class GameInfoView: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "gameScoreContainerSegue" {
-            containersViewController = segue.destination as? GoalsScoredViewController
-           containersViewController?.game = game
+        if segue.identifier == "gameHomeScoreContainerSegue" {
+            homeContainersViewController = segue.destination as? GoalsScoredViewController
+           homeContainersViewController?.game = game
+        }
+        else if segue.identifier == "gameVisitorScoreContainerSegue"{
+            visitorsContainersViewController = segue.destination as? GoalsScoredViewController
+            visitorsContainersViewController?.game = game
+            visitorsContainersViewController?.home = 1
         }
     }
     

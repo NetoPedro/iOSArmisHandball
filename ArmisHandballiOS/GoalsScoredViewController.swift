@@ -11,15 +11,15 @@ import UIKit
 class GoalsScoredViewController: UITableViewController {
     var goalRecords = [GoalRecord]()
     var game : Game?
-    
+    var home = 0
     func loadData(){
-        goalRecords.append(GoalRecord())
-        goalRecords.append(GoalRecord(type:1))
-        goalRecords.append(GoalRecord(type:2))
-        goalRecords.append(GoalRecord())
-        goalRecords.append(GoalRecord(type:1))
-        goalRecords.append(GoalRecord())
-
+        if home == 0{goalRecords.append(GoalRecord())}
+        if home == 1{ goalRecords.append(GoalRecord(type:1))}
+        if home == 1{ goalRecords.append(GoalRecord(type:1))}
+        if home == 0{goalRecords.append(GoalRecord())}
+        if home == 1{ goalRecords.append(GoalRecord(type:1))}
+        
+        if home == 0{goalRecords.append(GoalRecord())}
     }
     
     override func viewDidLoad() {
@@ -47,16 +47,24 @@ class GoalsScoredViewController: UITableViewController {
         return goalRecords.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       guard let cell = tableView.dequeueReusableCell(withIdentifier: "GoalsScoredViewCell", for: indexPath) as? GoalsScoredViewCell else{fatalError()}
-        
+    func  fillCell(cell : GoalsScoredViewCell, indexPath: IndexPath) -> GoalsScoredViewCell{
         let goalRecord = goalRecords[indexPath.row]
         cell.playersFaceImage.image = UIImage(data:goalRecord.athletePhoto)
         cell.playersNameLabel.text = goalRecord.athleteName
         cell.numberOfGoalsLabel.text = String(goalRecord.count)
-        if goalRecord.team == 0 {cell.backgroundColor = UIColor.cyan}
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if(home == 0) {guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeGoalsScoredViewCell", for: indexPath) as? GoalsScoredViewCell else{fatalError()}
+            return fillCell(cell: cell, indexPath: indexPath)
+        }
+        else{guard let cell = tableView.dequeueReusableCell(withIdentifier: "VisitorGoalsScoredViewCell", for: indexPath) as? GoalsScoredViewCell else{fatalError()}
+            return fillCell(cell: cell, indexPath: indexPath)
+        }
+        return UITableViewCell()
     }
     
 

@@ -40,29 +40,37 @@ class GamesView: UITableViewController {
             }
         }.resume()*/
         games.append(Game.init())
-        games.append(Game.init(type:1))
         games.append(Game.init())
-        games.append(Game.init(type:1))
         games.append(Game.init())
-        games.append(Game.init(type:1))
         games.append(Game.init())
-        games.append(Game.init(type:1))
         games.append(Game.init())
-        games.append(Game.init(type:1))
         games.append(Game.init())
-        games.append(Game.init(type:1))
         games.append(Game.init())
-        games.append(Game.init(type:1))
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
+        games.append(Game.init())
         
-        games.append(Game.init())
         games.append(Game.init(type:1))
-        games.append(Game.init())
         games.append(Game.init(type:1))
-        games.append(Game.init())
         games.append(Game.init(type:1))
-        games.append(Game.init())
         games.append(Game.init(type:1))
-        games.append(Game.init())
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
+        games.append(Game.init(type:1))
         games.append(Game.init(type:1))
         games.append(Game.init(type:1))
         games.append(Game.init(type:1))
@@ -87,20 +95,71 @@ class GamesView: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+        print("Secçoes")
+        print(countSections())
+        return countSections()
         //Check possible more sections
+    }
+    
+    func countSections() -> Int {
+        var i = 1;
+        var prevGame = games.first
+        for game in games {
+            if game.date != prevGame?.date{
+                //Verificar condição
+                i=i+1
+            }
+            prevGame = game
+        }
+        return i
+    }
+    
+    func countRowsSection(section : Int) -> Int {
+        var i = 0, j = 0;
+        var prevGame = games.first
+        for game in games {
+            if game.date != prevGame?.date{
+                //Verificar condição
+                i=i+1
+            }
+            if(i > section) {break}
+            if i == section {j+=1}
+            prevGame = game
+        }
+        return j
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        print("Secao")
+        print (section)
+        print("Row")
+        print(countRowsSection(section: section))
+        return countRowsSection(section: section)
     }
 
+    
+    func findGameSectionRow(section : Int, row : Int) -> Game{
+        var i = 0, j = 0;
+        var prevGame = games.first
+        for game in games {
+            if game.date != prevGame?.date{
+                //Verificar condição
+                i=i+1
+            }
+            if(i > section) {break}
+            if i == section {if j == row{return game}
+                j+=1}
+            prevGame = game
+        }
+        return prevGame!
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameView", for: indexPath) as? GameView else {
           fatalError("The dequeued cell is not an instance of GameView")
         }
-        let game = games[indexPath.row]
+        let game = findGameSectionRow(section: indexPath.section , row: indexPath.row)
+        
         cell.homeTeamName.text = game.homeClubName
         cell.visitorsTeamName.text = game.visitorClubName
         cell.homeTeamScore.text = String(game.homeTeamResult)
@@ -122,7 +181,7 @@ class GamesView: UITableViewController {
         }
         
         guard let selectedCell = sender as? GameView else {
-            fatalError("Unexpected sender: \(sender)")
+            fatalError("Unexpected sender: \(String(describing: sender))")
         }
         
         guard let indexPath = tableView.indexPath(for: selectedCell) else {
@@ -135,6 +194,20 @@ class GamesView: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40 ;
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var i = 0, j = 0;
+        var prevGame = games.first
+        for game in games {
+            if i == section {break}
+            if game.date != prevGame?.date{
+                //Verificar condição
+                i=i+1
+            }
+            prevGame = game
+        }
+        return prevGame?.date
     }
     
     /*
