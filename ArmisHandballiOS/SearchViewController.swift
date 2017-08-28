@@ -76,7 +76,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         athletes.removeAll()
         tournaments.removeAll()
         for searchable in searchables{
-            if !searchable.name.contains(text) && text != "" {continue}
+            if !searchable.name.localizedCaseInsensitiveContains(text) && text != "" {continue}
             if searchable.type == "CLUB" {clubs.append(searchable)
                 continue
             }
