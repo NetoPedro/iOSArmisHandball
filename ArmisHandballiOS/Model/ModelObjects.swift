@@ -103,5 +103,26 @@ struct Searchable : Codable {
     let pk : Int
     let name : String
     let icon : Data
-    let type : String 
+    let type : String
+    init(){
+        let logo = UIImage(named: "TeamLogo")
+        pk = 0
+        name = "Porto"
+        icon = (UIImagePNGRepresentation(logo!)! as Data)
+        type = "CLUB"
+    }
+    init(_ par : Int){
+        let logo = UIImage(named: "TeamLogo")
+        pk = 0
+        name = "Ronaldo"
+        icon = (UIImagePNGRepresentation(logo!)! as Data)
+        type = "ATHLETE"
+    }
+    init(_ par : String){
+        let logo = UIImage(named: "TeamLogo")
+        pk = 0
+        name = "Liga NOS"
+        icon = (UIImagePNGRepresentation(logo!)! as Data)
+        type = "TOURNAMENT"
+    }
 }

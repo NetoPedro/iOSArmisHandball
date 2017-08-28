@@ -11,19 +11,34 @@ import UIKit
 class SearchViewController: UITableViewController, UISearchBarDelegate {
 
     var searchables = [Searchable]()
-    
+    var athletes  = [Searchable]()
+    var clubs = [Searchable]()
+    var tournaments = [Searchable]()
     @IBOutlet weak var searchBar: UISearchBar!
     
  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self
+        searchables.removeAll()
+        searchables.append(Searchable(1))
+        searchables.append(Searchable())
+        searchables.append(Searchable("OI"))
+        searchables.append(Searchable())
+        searchables.append(Searchable(1))
+        searchables.append(Searchable())
+        searchables.append(Searchable("OI"))
+        searchables.append(Searchable())
+        searchables.append(Searchable(1))
+        searchables.append(Searchable())
+        searchables.append(Searchable("OI"))
+        fillLists("")
+
     }
     
     func doSearch(){
-        print("Ola")
+        /*
         guard let text = searchBar.text else {return}
-        print("OI")
         guard let url = URL(string: "http://192.168.100.14/Armis/api/Searchable?name=\(text)") else {return}
         print(url)
         let session = URLSession.shared
@@ -48,9 +63,32 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                     print("Unable to decode")
                 }
             }
-            }.resume()
+            }.resume() */
+        guard let text = searchBar.text else {return}
+
+        fillLists(text)
+        refreshControl?.beginRefreshing()
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
-    
+    func fillLists(_ text: String){
+        clubs.removeAll()
+        athletes.removeAll()
+        tournaments.removeAll()
+        for searchable in searchables{
+            if !searchable.name.contains(text) && text != "" {continue}
+            if searchable.type == "CLUB" {clubs.append(searchable)
+                continue
+            }
+            if searchable.type == "ATHLETE" {athletes.append(searchable)
+                continue
+            }
+            if searchable.type == "TOURNAMENT" {tournaments.append(searchable)
+                
+            }
+            
+        }
+    }
     func searchBarResultsListButtonClicked(_ searchBar: UISearchBar){
         doSearch()
     }
@@ -66,23 +104,58 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchables.count
+        if section == 0 {return clubs.count}
+        if section == 1 {return athletes.count}
+        if section == 2 {return tournaments.count}
+        return 0
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell", for: indexPath) as? SearchViewCell else {fatalError()}
-        let searchable = searchables[indexPath.row]
+    fileprivate func fillParameters(_ indexPath: IndexPath, _ cell: SearchViewCell, _ section : Int) {
+        var searchable : Searchable
+        if section == 0{
+            searchable = clubs[indexPath.row]
+        }
+        else if section == 1{
+             searchable = athletes[indexPath.row]
+        }
+        else {
+            searchable = tournaments[indexPath.row]
+        }
         cell.searchItemIcon.image = UIImage(data: searchable.icon)
         cell.searchItemName.text = searchable.name
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var identifier  = ""
+        if indexPath.section == 0{
+            identifier = "clubCell"
+        }
+            
+        else if indexPath.section == 1{
+            identifier = "playerCell"
 
+        }
+        else if indexPath.section == 2{
+            identifier = "tournamentCell"
+
+        }
+       
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? SearchViewCell else {fatalError()}
+        fillParameters(indexPath, cell, indexPath.section)
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {return "Clubs"}
+        if section == 1 {return "Athletes"}
+        return "Tournaments"
+    }
 
     /*
     // Override to support conditional editing of the table view.

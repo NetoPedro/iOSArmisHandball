@@ -319,6 +319,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" selectedImage="search" systemItem="search" id="CFk-js-q7c"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="LHJ-pm-Jrm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="searchBar" destination="A9U-9O-S16" id="1fE-tT-Sl0"/>
                     </connections>
