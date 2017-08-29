@@ -42,7 +42,7 @@ struct Game : Codable {
     let date : String
     
     init(){
-        let logo = UIImage(named: "TeamLogo")
+        let logo = UIImage(named: "club")
 
         pk = 1 ;
         matchDay = "MatchDay"
@@ -57,7 +57,7 @@ struct Game : Codable {
         date = "22-10-2017"
     }
     init(type:Int ){
-        let logo = UIImage(named: "TeamLogo")
+        let logo = UIImage(named: "club")
 
         pk = 1 ;
         matchDay = "MatchDay"
@@ -82,7 +82,7 @@ struct GoalRecord : Codable {
     let count : Int
     
     init(){
-        let logo = UIImage(named: "TeamLogo")
+        let logo = UIImage(named: "athlete")
         pk = 0
         athleteName = "Ronaldo"
         athletePhoto = (UIImagePNGRepresentation(logo!)! as Data)
@@ -90,7 +90,7 @@ struct GoalRecord : Codable {
         count = 3
     }
     init(type : Int){
-    let logo = UIImage(named: "TeamLogo")
+    let logo = UIImage(named: "athlete")
     pk = 0
     athleteName = "Messe"
     athletePhoto = (UIImagePNGRepresentation(logo!)! as Data)
@@ -105,14 +105,14 @@ struct Searchable : Codable {
     let icon : Data
     let type : String
     init(){
-        let logo = UIImage(named: "TeamLogo")
+        let logo = UIImage(named: "club")
         pk = 0
         name = "Porto"
         icon = (UIImagePNGRepresentation(logo!)! as Data)
         type = "CLUB"
     }
     init(_ par : Int){
-        let logo = UIImage(named: "TeamLogo")
+        let logo = UIImage(named: "athlete")
         pk = 0
         name = "Ronaldo"
         icon = (UIImagePNGRepresentation(logo!)! as Data)

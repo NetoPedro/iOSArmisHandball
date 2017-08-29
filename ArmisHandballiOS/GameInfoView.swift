@@ -11,19 +11,21 @@ import UIKit
 class GameInfoView: UIViewController {
 
     
+    @IBOutlet weak var homeTeamName: UILabel!
+    @IBOutlet weak var visitorTeamName: UILabel!
     @IBOutlet weak var homeLogo: UIImageView!
     @IBOutlet weak var visitorsLogo: UIImageView!
     @IBOutlet weak var visitorsScore: UILabel!
     @IBOutlet weak var homeScore: UILabel!
     @IBOutlet weak var homeGameScoresView: UIView!
-    @IBOutlet weak var visitorsGameScoreView: UIView!
     var homeContainersViewController : GoalsScoredViewController?
-    var visitorsContainersViewController : GoalsScoredViewController?
 
     var game : Game?
     override func viewDidLoad() {
         super.viewDidLoad()
         if let game = game{
+            homeTeamName.text = game.homeClubName
+            visitorTeamName.text = game.visitorClubName
             homeLogo.image = UIImage(data: game.homeClubLogo)
             visitorsLogo.image = UIImage(data: game.visitorClubLogo)
             visitorsScore.text = String( game.visitorTeamResult)
@@ -38,11 +40,7 @@ class GameInfoView: UIViewController {
             homeContainersViewController = segue.destination as? GoalsScoredViewController
            homeContainersViewController?.game = game
         }
-        else if segue.identifier == "gameVisitorScoreContainerSegue"{
-            visitorsContainersViewController = segue.destination as? GoalsScoredViewController
-            visitorsContainersViewController?.game = game
-            visitorsContainersViewController?.home = 1
-        }
+     
     }
     
     override func didReceiveMemoryWarning() {

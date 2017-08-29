@@ -9,17 +9,17 @@
 import UIKit
 
 class GoalsScoredViewController: UITableViewController {
-    var goalRecords = [GoalRecord]()
+    var homeGoalRecords = [GoalRecord]()
+    var visitorGoalRecords = [GoalRecord]()
     var game : Game?
     var home = 0
     func loadData(){
-        if home == 0{goalRecords.append(GoalRecord())}
-        if home == 1{ goalRecords.append(GoalRecord(type:1))}
-        if home == 1{ goalRecords.append(GoalRecord(type:1))}
-        if home == 0{goalRecords.append(GoalRecord())}
-        if home == 1{ goalRecords.append(GoalRecord(type:1))}
-        
-        if home == 0{goalRecords.append(GoalRecord())}
+        homeGoalRecords.append(GoalRecord())
+         visitorGoalRecords.append(GoalRecord(type:1))
+         visitorGoalRecords.append(GoalRecord(type:1))
+        homeGoalRecords.append(GoalRecord())
+         visitorGoalRecords.append(GoalRecord(type:1))
+        homeGoalRecords.append(GoalRecord())
     }
     
     override func viewDidLoad() {
@@ -44,11 +44,15 @@ class GoalsScoredViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if game == nil {return 0}
         // Rest Request to return a list of gameRecords of the game
-        return goalRecords.count
+        return visitorGoalRecords.count + homeGoalRecords.count
     }
 
     func  fillCell(cell : GoalsScoredViewCell, indexPath: IndexPath) -> GoalsScoredViewCell{
-        let goalRecord = goalRecords[indexPath.row]
+        var goalRecord = GoalRecord()
+        if homeGoalRecords.count > indexPath.row{
+            goalRecord = homeGoalRecords[indexPath.row]}
+        else {
+            goalRecord = visitorGoalRecords[indexPath.row - homeGoalRecords.count]}
         cell.playersFaceImage.image = UIImage(data:goalRecord.athletePhoto)
         cell.playersNameLabel.text = goalRecord.athleteName
         cell.numberOfGoalsLabel.text = String(goalRecord.count)
@@ -58,7 +62,7 @@ class GoalsScoredViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if(home == 0) {guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeGoalsScoredViewCell", for: indexPath) as? GoalsScoredViewCell else{fatalError()}
+        if homeGoalRecords.count > indexPath.row {guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeGoalsScoredViewCell", for: indexPath) as? GoalsScoredViewCell else{fatalError()}
             return fillCell(cell: cell, indexPath: indexPath)
         }
         else{guard let cell = tableView.dequeueReusableCell(withIdentifier: "VisitorGoalsScoredViewCell", for: indexPath) as? GoalsScoredViewCell else{fatalError()}
@@ -67,6 +71,9 @@ class GoalsScoredViewController: UITableViewController {
         return UITableViewCell()
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Marcadores"
+    }
   
     
     /*
