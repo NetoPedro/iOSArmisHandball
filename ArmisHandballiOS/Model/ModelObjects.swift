@@ -97,6 +97,7 @@ struct Game : Codable {
 
 struct GoalRecord : Codable {
     let pk : Int
+    let athletePk : Int
     let athleteName : String
     let athletePhoto : Data
     let team : Int
@@ -105,6 +106,7 @@ struct GoalRecord : Codable {
     init(){
         let logo = UIImage(named: "athlete")
         pk = 0
+        athletePk = 0
         athleteName = "Ronaldo"
         athletePhoto = (UIImagePNGRepresentation(logo!)! as Data)
         team = 0
@@ -113,6 +115,7 @@ struct GoalRecord : Codable {
     init(type : Int){
     let logo = UIImage(named: "athlete")
     pk = 0
+    athletePk = 1
     athleteName = "Messe"
     athletePhoto = (UIImagePNGRepresentation(logo!)! as Data)
     team = 1

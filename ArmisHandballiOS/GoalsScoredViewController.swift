@@ -71,7 +71,6 @@ class GoalsScoredViewController: UITableViewController {
         return UITableViewCell()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AthleteSegueSearch" {
             let athleteView = segue.destination as? AthleteView
             guard let selectedCell = sender as? GoalsScoredViewCell else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
@@ -79,19 +78,15 @@ class GoalsScoredViewController: UITableViewController {
             guard let indexPath = tableView.indexPath(for: selectedCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            if indexPath.section == 0{
+            if homeGoalRecords.count > indexPath.row{
                 let selectedAthlete = homeGoalRecords[indexPath.row]
-                athleteView?.athletePk = selectedAthlete.pk
+                athleteView?.athletePk = selectedAthlete.athletePk
                 
             }
             else {
-                if indexPath.section == 1{
-                    let selectedAthlete = visitorGoalRecords[indexPath.row]
-                    athleteView?.athletePk = selectedAthlete.pk
-                    
-                }
-            }
-            
+                    let selectedAthlete = visitorGoalRecords[indexPath.row - homeGoalRecords.count]
+                    athleteView?.athletePk = selectedAthlete.athletePk
+                
         }
     }
     

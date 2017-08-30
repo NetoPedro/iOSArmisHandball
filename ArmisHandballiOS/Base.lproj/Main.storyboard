@@ -348,7 +348,7 @@
             <objects>
                 <viewController id="UEf-eD-ynV" userLabel="AthleteView" customClass="AthleteView" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5cb-xh-Mba">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="418"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nzx-Vc-hB0">
@@ -485,7 +485,7 @@
                                     <outlet property="numberOfGoalsLabel" destination="Tfh-Vu-iqt" id="KAU-cR-3gb"/>
                                     <outlet property="playersFaceImage" destination="jDf-V7-RiV" id="yv8-F0-ofk"/>
                                     <outlet property="playersNameLabel" destination="yQ7-GC-Xh1" id="EIc-31-ZWp"/>
-                                    <segue destination="UEf-eD-ynV" kind="showDetail" id="JQt-lb-b8B"/>
+                                    <segue destination="w55-1G-LBU" kind="show" id="6ma-pi-Hvf"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VisitorGoalsScoredViewCell" id="GVP-KQ-e2v" userLabel="VisitorGoalsScoredViewCell" customClass="GoalsScoredViewCell" customModule="ArmisHandballiOS" customModuleProvider="target">
@@ -519,6 +519,7 @@
                                     <outlet property="numberOfGoalsLabel" destination="ma1-3X-oWD" id="Vlq-Yi-wRY"/>
                                     <outlet property="playersFaceImage" destination="kZp-N6-6Wu" id="VXs-ZJ-ZRD"/>
                                     <outlet property="playersNameLabel" destination="GtX-js-LD7" id="sSY-cI-Okx"/>
+                                    <segue destination="w55-1G-LBU" kind="show" id="hTD-TJ-tWc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -570,12 +571,81 @@
             </objects>
             <point key="canvasLocation" x="951" y="384"/>
         </scene>
+        <!--AthleteViewGameInfo-->
+        <scene sceneID="5u8-RC-URX">
+            <objects>
+                <viewController id="w55-1G-LBU" userLabel="AthleteViewGameInfo" customClass="AthleteView" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v3Z-sx-yzd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="418"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yzx-vQ-Sly">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58175617329999996" green="0.69178492000000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRR-eb-tk3">
+                                <rect key="frame" x="131.66666666666666" y="125" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0AN-IG-0pk" userLabel="playerPic">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Boo-KC-EDO" userLabel="playerName">
+                                <rect key="frame" x="20" y="326" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerGender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJb-QG-Vo4">
+                                <rect key="frame" x="20" y="376" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerNationality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0T-KS-Mz8">
+                                <rect key="frame" x="20" y="426" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerTeam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-a4-GZE">
+                                <rect key="frame" x="20" y="476" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93517125209999996" green="0.96675754869999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="1ni-yb-oMm"/>
+                    </view>
+                    <connections>
+                        <outlet property="pictureView" destination="aRR-eb-tk3" id="7iS-4b-Q9y"/>
+                        <outlet property="playerGender" destination="zJb-QG-Vo4" id="2kZ-N7-ouo"/>
+                        <outlet property="playerName" destination="Boo-KC-EDO" id="GZJ-rQ-OVe"/>
+                        <outlet property="playerNationality" destination="l0T-KS-Mz8" id="Zhh-Ue-HpJ"/>
+                        <outlet property="playerPhot" destination="0AN-IG-0pk" id="dkO-yd-BTw"/>
+                        <outlet property="playerTeam" destination="ahJ-a4-GZE" id="d6t-aW-5RR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5QS-ci-0Tm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4272" y="324"/>
+        </scene>
     </scenes>
     <resources>
         <image name="home" width="30" height="30"/>
         <image name="search" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JQt-lb-b8B"/>
+        <segue reference="hTD-TJ-tWc"/>
     </inferredMetricsTieBreakers>
 </document>
