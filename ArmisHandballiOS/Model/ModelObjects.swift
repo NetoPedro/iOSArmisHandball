@@ -17,6 +17,27 @@ struct Athlete :Codable {
     let nationality : String
     let photo : Data
     let teamPk : Int
+    
+    init(){
+        let logo = UIImage(named: "athlete")
+        pk = 0
+        name = "Ronaldo"
+        gender = "Male"
+        clubName = "Real Madrid"
+        nationality = "Portuguese"
+        teamPk = 0
+        photo = (UIImagePNGRepresentation(logo!)! as Data)
+    }
+    init(_ type : Int){
+        let logo = UIImage(named: "athlete")
+        pk = 0
+        name = "Messi"
+        gender = "Male"
+        clubName = "Barcelona"
+        nationality = "Argentine"
+        teamPk = 0
+        photo = (UIImagePNGRepresentation(logo!)! as Data)
+    }
 }
 
 struct Edition  :Codable{

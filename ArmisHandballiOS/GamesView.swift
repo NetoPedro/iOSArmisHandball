@@ -193,8 +193,9 @@ class GamesView: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40 ;
+        return 80 ;
     }
+    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var i = 0, j = 0;
