@@ -121,7 +121,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-V5-cV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266.666666666667" y="-323.64130434782612"/>
+            <point key="canvasLocation" x="2259" y="-249"/>
         </scene>
         <!--Game Info View-->
         <scene sceneID="XK1-k4-Ptq">
@@ -341,7 +341,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFf-oW-W0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694.2028985507247" y="383.96739130434787"/>
+            <point key="canvasLocation" x="1583" y="384"/>
         </scene>
         <!--AthleteView-->
         <scene sceneID="33W-rN-VVC">
@@ -410,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WaQ-ZG-NQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="1132"/>
+            <point key="canvasLocation" x="1321" y="1304"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -443,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYy-Y4-VFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2573.913043478261" y="383.96739130434787"/>
+            <point key="canvasLocation" x="2365" y="545"/>
         </scene>
         <!--Home Goals Scored View Controller-->
         <scene sceneID="hux-2g-q6I">

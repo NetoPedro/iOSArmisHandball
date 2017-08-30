@@ -161,11 +161,11 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         if segue.identifier == "AthleteSegueSearch" {
             let athleteView = segue.destination as? AthleteView
             guard let selectedCell = sender as? SearchViewCell else {
-                fatalError("Unexpected sender: \(String(describing: sender))")
+                return
             }
             
             guard let indexPath = tableView.indexPath(for: selectedCell) else {
-                fatalError("The selected cell is not being displayed by the table")
+                return
             }
             
             let selectedAthlete = athletes[indexPath.row]
