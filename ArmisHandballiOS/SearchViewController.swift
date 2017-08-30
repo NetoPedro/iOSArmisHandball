@@ -156,6 +156,22 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         if section == 1 {return "Athletes"}
         return "Tournaments"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AthleteSegueSearch" {
+            let athleteView = segue.destination as? AthleteView
+            guard let selectedCell = sender as? SearchViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedAthlete = athletes[indexPath.row]
+            athleteView?.athletePk = selectedAthlete.pk
+        }
+    }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80

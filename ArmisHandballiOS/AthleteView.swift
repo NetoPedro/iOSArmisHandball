@@ -11,7 +11,8 @@ import UIKit
 class AthleteView: UIViewController {
 
     
-    var athlete : Athlete?
+    var athlete = Athlete()
+    var athletePk = 2
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var playerGender: UILabel!
     @IBOutlet weak var playerNationality: UILabel!
@@ -22,6 +23,18 @@ class AthleteView: UIViewController {
         super.viewDidLoad()
         pictureView.layer.cornerRadius = pictureView.frame.size.width/2
         pictureView.clipsToBounds = true
+        // get Athlete pela PK
+        if athletePk == 0 {
+            athlete = Athlete()
+        }
+        else if athletePk == 1 {
+            athlete = Athlete(1)
+        }
+        playerName.text = "Name:  \(String(describing: athlete.name))"
+        playerGender.text = "Gender:  \(athlete.gender)"
+        playerTeam.text = "Club:  \(athlete.clubName)"
+        playerNationality.text = "Nationality:  \(athlete.nationality)"
+        playerPhot.image = UIImage(data : (athlete.photo))
         // Do any additional setup after loading the view.
     }
 

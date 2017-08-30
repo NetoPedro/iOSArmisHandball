@@ -70,6 +70,31 @@ class GoalsScoredViewController: UITableViewController {
         }
         return UITableViewCell()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AthleteSegueSearch" {
+            let athleteView = segue.destination as? AthleteView
+            guard let selectedCell = sender as? GoalsScoredViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            if indexPath.section == 0{
+                let selectedAthlete = homeGoalRecords[indexPath.row]
+                athleteView?.athletePk = selectedAthlete.pk
+                
+            }
+            else {
+                if indexPath.section == 1{
+                    let selectedAthlete = visitorGoalRecords[indexPath.row]
+                    athleteView?.athletePk = selectedAthlete.pk
+                    
+                }
+            }
+            
+        }
+    }
+    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Marcadores"

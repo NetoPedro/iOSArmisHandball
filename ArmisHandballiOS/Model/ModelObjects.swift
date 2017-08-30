@@ -30,7 +30,7 @@ struct Athlete :Codable {
     }
     init(_ type : Int){
         let logo = UIImage(named: "athlete")
-        pk = 0
+        pk = 1
         name = "Messi"
         gender = "Male"
         clubName = "Barcelona"

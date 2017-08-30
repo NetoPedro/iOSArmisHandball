@@ -40,7 +40,7 @@ class GameInfoView: UIViewController {
             homeContainersViewController = segue.destination as? GoalsScoredViewController
            homeContainersViewController?.game = game
         }
-     
+           
     }
     
     override func didReceiveMemoryWarning() {

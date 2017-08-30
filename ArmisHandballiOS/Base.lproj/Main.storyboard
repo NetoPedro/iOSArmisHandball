@@ -295,7 +295,7 @@
                                 <connections>
                                     <outlet property="searchItemIcon" destination="efK-HO-ca4" id="bgM-hY-Vs0"/>
                                     <outlet property="searchItemName" destination="q4L-0c-bPp" id="gJO-gq-KEH"/>
-                                    <segue destination="UEf-eD-ynV" kind="show" id="4re-Vr-8ew"/>
+                                    <segue destination="UEf-eD-ynV" kind="show" identifier="AthleteSegueSearch" id="4re-Vr-8ew"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="clubCell" rowHeight="80" id="r6q-PT-di0" userLabel="ClubCell" customClass="SearchViewCell" customModule="ArmisHandballiOS" customModuleProvider="target">
@@ -348,7 +348,7 @@
             <objects>
                 <viewController id="UEf-eD-ynV" userLabel="AthleteView" customClass="AthleteView" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5cb-xh-Mba">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="418"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nzx-Vc-hB0">
@@ -356,7 +356,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.58175617329221296" green="0.69178491999499814" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLj-hY-IKc">
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLj-hY-IKc">
                                 <rect key="frame" x="131.66666666666666" y="125" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -367,29 +367,29 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03d-Ig-azb" userLabel="playerName">
-                                <rect key="frame" x="20" y="350" width="300" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="03d-Ig-azb" userLabel="playerName">
+                                <rect key="frame" x="20" y="326" width="300" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerGender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agw-Au-I8g">
-                                <rect key="frame" x="20" y="400" width="300" height="37"/>
+                                <rect key="frame" x="20" y="376" width="300" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerNationality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-eD-g2E">
-                                <rect key="frame" x="20" y="450" width="300" height="37"/>
+                                <rect key="frame" x="20" y="426" width="300" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerTeam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPi-5a-p0E">
-                                <rect key="frame" x="20" y="500" width="300" height="37"/>
+                                <rect key="frame" x="20" y="476" width="300" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -410,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WaQ-ZG-NQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675.3623188405797" y="1115.217391304348"/>
+            <point key="canvasLocation" x="3225" y="1132"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -485,6 +485,7 @@
                                     <outlet property="numberOfGoalsLabel" destination="Tfh-Vu-iqt" id="KAU-cR-3gb"/>
                                     <outlet property="playersFaceImage" destination="jDf-V7-RiV" id="yv8-F0-ofk"/>
                                     <outlet property="playersNameLabel" destination="yQ7-GC-Xh1" id="EIc-31-ZWp"/>
+                                    <segue destination="UEf-eD-ynV" kind="showDetail" id="JQt-lb-b8B"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VisitorGoalsScoredViewCell" id="GVP-KQ-e2v" userLabel="VisitorGoalsScoredViewCell" customClass="GoalsScoredViewCell" customModule="ArmisHandballiOS" customModuleProvider="target">
@@ -574,4 +575,7 @@
         <image name="home" width="30" height="30"/>
         <image name="search" width="60" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JQt-lb-b8B"/>
+    </inferredMetricsTieBreakers>
 </document>
