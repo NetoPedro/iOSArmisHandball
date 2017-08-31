@@ -43,6 +43,15 @@ struct Athlete :Codable {
 struct Edition  :Codable{
     let pk : Int
     let season : String
+    
+    init(){
+        pk = 0
+        season = "2016/2017"
+    }
+    init(_ type : Int){
+        pk = 1
+        season = "2017/2018"
+    }
 }
 struct MatchDay : Codable {
     let pk : Int
