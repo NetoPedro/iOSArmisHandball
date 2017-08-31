@@ -171,6 +171,19 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             let selectedAthlete = athletes[indexPath.row]
             athleteView?.athletePk = selectedAthlete.pk
         }
+        if segue.identifier == "TournamentSegueSearch" {
+            let tournamentView = segue.destination as? EditionTable
+            guard let selectedCell = sender as? SearchViewCell else {
+                return
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                return
+            }
+            
+            let selectedTournament = tournaments[indexPath.row]
+            tournamentView?.tournamentPK = selectedTournament.pk
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

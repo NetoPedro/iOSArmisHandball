@@ -271,7 +271,7 @@
                                 <connections>
                                     <outlet property="searchItemIcon" destination="FrG-Dv-VDs" id="K38-41-Z0Z"/>
                                     <outlet property="searchItemName" destination="cEW-1M-kZG" id="Rrq-tN-BhM"/>
-                                    <segue destination="HMz-zS-r5q" kind="show" id="1mX-Fp-ImR"/>
+                                    <segue destination="HMz-zS-r5q" kind="show" identifier="TournamentSegueSearch" id="1mX-Fp-ImR"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerCell" rowHeight="80" id="Ray-20-7LJ" userLabel="PlayerCell" customClass="SearchViewCell" customModule="ArmisHandballiOS" customModuleProvider="target">
@@ -418,20 +418,30 @@
         <!--Editions -->
         <scene sceneID="62F-7N-VKK">
             <objects>
-                <tableViewController id="HMz-zS-r5q" userLabel="Editions " sceneMemberID="viewController">
+                <tableViewController id="HMz-zS-r5q" userLabel="Editions " customClass="EditionTable" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PoD-8i-enc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xjl-o5-3uK">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditionCell" rowHeight="80" id="xjl-o5-3uK" customClass="EditionCell" customModule="ArmisHandballiOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xjl-o5-3uK" id="NI9-UJ-Mg2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Season" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="lPl-RR-F9l">
+                                            <rect key="frame" x="105.29813664596259" y="15.962732919254449" width="200" height="50.000000000000227"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="season" destination="lPl-RR-F9l" id="a4L-Mf-7ZH"/>
                                     <segue destination="0Xc-Uf-gZd" kind="show" id="Ihm-0e-EBe"/>
                                 </connections>
                             </tableViewCell>

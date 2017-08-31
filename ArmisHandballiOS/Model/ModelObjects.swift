@@ -153,7 +153,7 @@ struct Searchable : Codable {
     }
     init(_ par : String){
         let logo = UIImage(named: "TeamLogo")
-        pk = 0
+        pk = 2
         name = "Liga NOS"
         icon = (UIImagePNGRepresentation(logo!)! as Data)
         type = "TOURNAMENT"
