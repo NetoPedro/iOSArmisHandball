@@ -122,7 +122,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-V5-cV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2259" y="-249"/>
+            <point key="canvasLocation" x="2310" y="-323"/>
         </scene>
         <!--Game Info View-->
         <scene sceneID="XK1-k4-Ptq">
@@ -413,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WaQ-ZG-NQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="1304"/>
+            <point key="canvasLocation" x="951" y="1134"/>
         </scene>
         <!--Editions -->
         <scene sceneID="62F-7N-VKK">
@@ -454,12 +454,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eY4-pT-R8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2210" y="1326"/>
+            <point key="canvasLocation" x="1613" y="1321"/>
         </scene>
         <!--Tournament Info-->
         <scene sceneID="HDA-sA-h8O">
             <objects>
-                <viewController id="0Xc-Uf-gZd" userLabel="Tournament Info" sceneMemberID="viewController">
+                <viewController id="0Xc-Uf-gZd" userLabel="Tournament Info" customClass="MatchDaysViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CeW-G5-Ubm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -486,7 +486,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Fcx-Fk-dPz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cdz-79-yhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4011" y="1295"/>
+            <point key="canvasLocation" x="4003" y="1322"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -519,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYy-Y4-VFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2365" y="545"/>
+            <point key="canvasLocation" x="2617" y="384"/>
         </scene>
         <!--Home Goals Scored View Controller-->
         <scene sceneID="hux-2g-q6I">
@@ -645,7 +645,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWO-OU-gaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="384"/>
+            <point key="canvasLocation" x="790" y="384"/>
         </scene>
         <!--AthleteViewGameInfo-->
         <scene sceneID="5u8-RC-URX">
@@ -714,7 +714,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5QS-ci-0Tm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4272" y="324"/>
+            <point key="canvasLocation" x="4154" y="180"/>
         </scene>
     </scenes>
     <resources>
