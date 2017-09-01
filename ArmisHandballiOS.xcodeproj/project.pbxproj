@@ -26,6 +26,7 @@
 		662DF2511F5873E5008A429C /* EditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2501F5873E5008A429C /* EditionCell.swift */; };
 		662DF2531F587403008A429C /* EditionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2521F587403008A429C /* EditionTable.swift */; };
 		662DF2551F587902008A429C /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2541F587902008A429C /* TournamentViewController.swift */; };
+		662DF2571F59BA2B008A429C /* MatchDaysTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2561F59BA2B008A429C /* MatchDaysTableTableViewController.swift */; };
 		66DCF09C1F4F54BB0045F866 /* GameInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DCF09B1F4F54BB0045F866 /* GameInfoView.swift */; };
 		66DCF09E1F56F1B20045F866 /* AthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DCF09D1F56F1B20045F866 /* AthleteView.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		662DF2501F5873E5008A429C /* EditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditionCell.swift; sourceTree = "<group>"; };
 		662DF2521F587403008A429C /* EditionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditionTable.swift; sourceTree = "<group>"; };
 		662DF2541F587902008A429C /* TournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
+		662DF2561F59BA2B008A429C /* MatchDaysTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDaysTableTableViewController.swift; sourceTree = "<group>"; };
 		66DCF09B1F4F54BB0045F866 /* GameInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoView.swift; sourceTree = "<group>"; };
 		66DCF09D1F56F1B20045F866 /* AthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				662DF2501F5873E5008A429C /* EditionCell.swift */,
 				662DF2521F587403008A429C /* EditionTable.swift */,
 				662DF2541F587902008A429C /* TournamentViewController.swift */,
+				662DF2561F59BA2B008A429C /* MatchDaysTableTableViewController.swift */,
 			);
 			path = ArmisHandballiOS;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				662DF2571F59BA2B008A429C /* MatchDaysTableTableViewController.swift in Sources */,
 				660571031F42444D00D5E053 /* GamesView.swift in Sources */,
 				660571051F44AF5200D5E053 /* SearchViewCell.swift in Sources */,
 				660571071F462F8700D5E053 /* SearchViewController.swift in Sources */,
