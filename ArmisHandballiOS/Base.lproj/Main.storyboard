@@ -423,9 +423,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ra3-0p-ME1">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                            <color key="backgroundColor" red="0.93517125209999996" green="0.96675754869999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditionCell" rowHeight="80" id="xjl-o5-3uK" customClass="EditionCell" customModule="ArmisHandballiOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="116" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xjl-o5-3uK" id="NI9-UJ-Mg2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
@@ -459,16 +467,16 @@
         <!--Tournament Info-->
         <scene sceneID="HDA-sA-h8O">
             <objects>
-                <viewController id="0Xc-Uf-gZd" userLabel="Tournament Info" customClass="MatchDaysViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Xc-Uf-gZd" userLabel="Tournament Info" customClass="TournamentViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CeW-G5-Ubm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTS-Sm-pYE">
-                                <rect key="frame" x="0.0" y="224" width="414" height="463"/>
+                                <rect key="frame" x="0.0" y="228" width="414" height="459"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="Fcx-Fk-dPz" kind="embed" id="uld-yg-p94"/>
+                                    <segue destination="wZY-cL-Yrl" kind="embed" id="dCe-Nk-cs0"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -480,13 +488,37 @@
             </objects>
             <point key="canvasLocation" x="3102.898550724638" y="1321.467391304348"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="jzm-mS-l1i">
+        <!--Table View Controller-->
+        <scene sceneID="qFc-0g-twy">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Fcx-Fk-dPz" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdz-79-yhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="wZY-cL-Yrl" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jI4-YF-ZA3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="459"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <pickerView key="tableHeaderView" contentMode="scaleToFill" id="ZEq-ji-JJl">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </pickerView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KjQ-iS-1gK">
+                                <rect key="frame" x="0.0" y="148" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjQ-iS-1gK" id="gPB-mU-pVB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wZY-cL-Yrl" id="Rg6-TI-SRe"/>
+                            <outlet property="delegate" destination="wZY-cL-Yrl" id="GfI-6x-xgd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rzz-Y7-Xd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4003" y="1322"/>
+            <point key="canvasLocation" x="3960.8695652173915" y="1320.2445652173915"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

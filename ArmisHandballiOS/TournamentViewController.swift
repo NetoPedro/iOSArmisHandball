@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MatchDaysViewController: UIViewController {
+class TournamentViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
