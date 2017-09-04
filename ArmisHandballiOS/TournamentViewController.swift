@@ -8,8 +8,11 @@
 
 import UIKit
 
-class TournamentViewController: UITableViewController {
+class TournamentViewController: UIViewController {
 
+    var containerViewController : MatchDaysTableTableViewController?
+    var editionPk = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,13 @@ class TournamentViewController: UITableViewController {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MatchDayContainerSegue" {
+            containerViewController = segue.destination as? MatchDaysTableTableViewController
+            containerViewController?.editionPk = editionPk
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

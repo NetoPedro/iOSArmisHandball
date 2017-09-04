@@ -53,7 +53,16 @@ class EditionTable: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Passar pk da edition
+        let tournamentView = segue.destination as? TournamentViewController
+        guard let selectedCell = sender as? EditionCell else {
+            fatalError("Unexpected sender: \(String(describing: sender))")
+        }
+        guard let indexPath = tableView.indexPath(for: selectedCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+            let selectedEdition = editions[indexPath.row]
+            tournamentView?.editionPk = selectedEdition.pk
+        
     }
     
     /*

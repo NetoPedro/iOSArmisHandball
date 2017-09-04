@@ -16,13 +16,14 @@ class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDele
 
     var matchDays = [MatchDay]()
     var games = [Game]()
-    let editionPk = 0
+    var editionPk = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //GetMatchDays by Edition PK
-        
+        matchDays.append(MatchDay())
+        matchDays.append(MatchDay(1))
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -34,6 +35,9 @@ class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDele
         else{
             games.append(Game(type : 1))
         }
+        refreshControl?.beginRefreshing()
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
         
     }
     
@@ -42,11 +46,11 @@ class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDele
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return matchDays.count
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return matchDays.count
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,15 +70,23 @@ class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDele
         return games.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as? GameView else {
+            fatalError("The dequeued cell is not an instance of GameView")
+        }
+        let game = games[indexPath.row]
+        
+        cell.homeTeamName.text = game.homeClubName
+        cell.visitorsTeamName.text = game.visitorClubName
+        cell.homeTeamScore.text = String(game.homeTeamResult)
+        cell.visitorsTeamScore.text = String(game.visitorTeamResult)
+        cell.game = game
+        cell.homeTeamLogo.image = UIImage(data : game.homeClubLogo)
+        cell.visitorsTeamLogo.image = UIImage(data: game.visitorClubLogo)
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

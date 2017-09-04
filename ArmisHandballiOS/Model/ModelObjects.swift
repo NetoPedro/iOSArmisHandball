@@ -56,6 +56,15 @@ struct Edition  :Codable{
 struct MatchDay : Codable {
     let pk : Int
     let name : String
+    
+    init(){
+        pk = 0
+        name = "Jornada 1"
+    }
+    init(_ type: Int){
+        pk = 0
+        name = "Jornada 2"
+    }
 }
 
 struct Game : Codable {

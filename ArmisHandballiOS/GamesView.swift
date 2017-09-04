@@ -188,7 +188,7 @@ class GamesView: UITableViewController {
             fatalError("The selected cell is not being displayed by the table")
         }
         
-        let selectedGame = games[indexPath.row]
+        let selectedGame = findGameSectionRow(section: indexPath.section, row: indexPath.row)
         gameInfoController.game = selectedGame
     }
 
