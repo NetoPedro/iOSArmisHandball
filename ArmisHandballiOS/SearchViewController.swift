@@ -190,6 +190,19 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             tournamentView?.tournamentName = selectedTournament.name
             tournamentView?.tournamentImage = (UIImagePNGRepresentation((UIImage(named: "TeamLogo"))!)! as Data)
         }
+        if segue.identifier == "ClubSearchSegue" {
+            let teamView = segue.destination as? TeamTableViewController
+            guard let selectedCell = sender as? SearchViewCell else {
+                return
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                return
+            }
+            
+            let selectedClub = clubs[indexPath.row]
+            teamView?.clubPk = selectedClub.pk
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

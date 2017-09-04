@@ -323,7 +323,7 @@
                                 <connections>
                                     <outlet property="searchItemIcon" destination="y1b-Uz-Xb0" id="ir1-Cs-ApF"/>
                                     <outlet property="searchItemName" destination="XHx-H9-Xug" id="b3m-zJ-GmC"/>
-                                    <segue destination="emE-8J-43M" kind="show" identifier="clubSearchSegue" id="2vV-bm-yGp"/>
+                                    <segue destination="emE-8J-43M" kind="show" identifier="ClubSearchSegue" id="2vV-bm-yGp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -346,16 +346,16 @@
             </objects>
             <point key="canvasLocation" x="1583" y="384"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Team Table View Controller-->
         <scene sceneID="TGZ-99-qd8">
             <objects>
-                <tableViewController id="emE-8J-43M" sceneMemberID="viewController">
+                <tableViewController id="emE-8J-43M" customClass="TeamTableViewController" customModule="ArmisHandballiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7JQ-bq-drX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="O0S-G0-O44">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" rowHeight="80" id="O0S-G0-O44" customClass="TeamCellView" customModule="ArmisHandballiOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O0S-G0-O44" id="S5G-qU-C7d">
@@ -371,6 +371,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="teamName" destination="8Pb-yK-qIE" id="wHv-Uh-GdJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

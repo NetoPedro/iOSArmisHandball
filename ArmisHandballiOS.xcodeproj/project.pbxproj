@@ -24,11 +24,12 @@
 		6605710B1F48E4D300D5E053 /* GoalsScoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605710A1F48E4D300D5E053 /* GoalsScoredViewController.swift */; };
 		661426E21F4DF73F00706ECF /* GameStoryboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661426E11F4DF73F00706ECF /* GameStoryboardView.swift */; };
 		661604F31F5A278900627D4F /* GameViewMatchDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661604F21F5A278900627D4F /* GameViewMatchDayCell.swift */; };
+		6621B5E71F5DBCD5008B70BF /* TeamCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621B5E61F5DBCD5008B70BF /* TeamCellView.swift */; };
 		662DF2511F5873E5008A429C /* EditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2501F5873E5008A429C /* EditionCell.swift */; };
 		662DF2531F587403008A429C /* EditionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2521F587403008A429C /* EditionTable.swift */; };
 		662DF2551F587902008A429C /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2541F587902008A429C /* TournamentViewController.swift */; };
 		662DF2571F59BA2B008A429C /* MatchDaysTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DF2561F59BA2B008A429C /* MatchDaysTableTableViewController.swift */; };
-		66B40DB61F5DB08300997138 /* teamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B40DB51F5DB08300997138 /* teamCell.swift */; };
+		66B40DB81F5DB2C700997138 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B40DB71F5DB2C700997138 /* TeamTableViewController.swift */; };
 		66DCF09C1F4F54BB0045F866 /* GameInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DCF09B1F4F54BB0045F866 /* GameInfoView.swift */; };
 		66DCF09E1F56F1B20045F866 /* AthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DCF09D1F56F1B20045F866 /* AthleteView.swift */; };
 /* End PBXBuildFile section */
@@ -74,11 +75,12 @@
 		6605710A1F48E4D300D5E053 /* GoalsScoredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScoredViewController.swift; sourceTree = "<group>"; };
 		661426E11F4DF73F00706ECF /* GameStoryboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStoryboardView.swift; sourceTree = "<group>"; };
 		661604F21F5A278900627D4F /* GameViewMatchDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewMatchDayCell.swift; sourceTree = "<group>"; };
+		6621B5E61F5DBCD5008B70BF /* TeamCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCellView.swift; sourceTree = "<group>"; };
 		662DF2501F5873E5008A429C /* EditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditionCell.swift; sourceTree = "<group>"; };
 		662DF2521F587403008A429C /* EditionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditionTable.swift; sourceTree = "<group>"; };
 		662DF2541F587902008A429C /* TournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
 		662DF2561F59BA2B008A429C /* MatchDaysTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDaysTableTableViewController.swift; sourceTree = "<group>"; };
-		66B40DB51F5DB08300997138 /* teamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamCell.swift; sourceTree = "<group>"; };
+		66B40DB71F5DB2C700997138 /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		66DCF09B1F4F54BB0045F866 /* GameInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoView.swift; sourceTree = "<group>"; };
 		66DCF09D1F56F1B20045F866 /* AthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,7 +155,8 @@
 				662DF2541F587902008A429C /* TournamentViewController.swift */,
 				662DF2561F59BA2B008A429C /* MatchDaysTableTableViewController.swift */,
 				661604F21F5A278900627D4F /* GameViewMatchDayCell.swift */,
-				66B40DB51F5DB08300997138 /* teamCell.swift */,
+				66B40DB71F5DB2C700997138 /* TeamTableViewController.swift */,
+				6621B5E61F5DBCD5008B70BF /* TeamCellView.swift */,
 			);
 			path = ArmisHandballiOS;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				660571071F462F8700D5E053 /* SearchViewController.swift in Sources */,
 				660571091F48E29A00D5E053 /* GoalsScoredViewCell.swift in Sources */,
 				660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */,
+				66B40DB81F5DB2C700997138 /* TeamTableViewController.swift in Sources */,
 				662DF2551F587902008A429C /* TournamentViewController.swift in Sources */,
 				660571011F42343600D5E053 /* GameView.swift in Sources */,
 				66DCF09C1F4F54BB0045F866 /* GameInfoView.swift in Sources */,
@@ -332,8 +336,8 @@
 				6605710B1F48E4D300D5E053 /* GoalsScoredViewController.swift in Sources */,
 				660570C21F34BABF00D5E053 /* AppDelegate.swift in Sources */,
 				662DF2531F587403008A429C /* EditionTable.swift in Sources */,
-				66B40DB61F5DB08300997138 /* teamCell.swift in Sources */,
 				660570C41F34BAC000D5E053 /* FirstViewController.swift in Sources */,
+				6621B5E71F5DBCD5008B70BF /* TeamCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -186,4 +186,12 @@ struct Searchable : Codable {
         icon = (UIImagePNGRepresentation(logo!)! as Data)
         type = 1
     }
+    
+
+}
+struct Team : Codable{
+    let pk : Int
+    let gender : String
+    let ageRange : String
+    let clubPk : Int
 }
