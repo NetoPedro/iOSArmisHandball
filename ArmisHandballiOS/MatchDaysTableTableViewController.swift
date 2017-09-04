@@ -11,33 +11,118 @@ import UIKit
 class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
-   
+    
+    @IBOutlet weak var pickerView: UIPickerView!
     
 
     var matchDays = [MatchDay]()
     var games = [Game]()
     var editionPk = 0
     
+    func getMatchDays(){
+        self.refreshControl?.beginRefreshing()
+        
+        guard let url = URL(string: "http://192.168.100.16/Armis/api/MatchDays?editionPK=\(editionPk)") else {return}
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            guard let response = response else {
+                return
+            }
+            print(response)
+            
+            
+            if let data = data {
+                self.matchDays.removeAll()
+                do{
+                    let decoder = JSONDecoder()
+                    decoder.dataDecodingStrategy = JSONDecoder.DataDecodingStrategy.base64
+                    let newMatchDays = try  decoder.decode([MatchDay].self, from: data)
+                    self.matchDays += newMatchDays
+                    print(self.matchDays.count)
+                }
+                catch{
+                    print("Unable to decode")
+                }
+                DispatchQueue.main.sync {
+                    self.pickerView.reloadAllComponents()
+                }
+
+            }
+            
+            }.resume()
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        // guard let view = sender as? GameView else{return}
+        // self.game = view.game!
+        
+        guard let gameInfoController = segue.destination as? GameInfoView else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        
+        guard let selectedCell = sender as? GameViewMatchDayCell else {
+            fatalError("Unexpected sender: \(String(describing: sender))")
+        }
+        
+        guard let indexPath = tableView.indexPath(for: selectedCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+        
+        let selectedGame = games[indexPath.row]
+        gameInfoController.game = selectedGame
+    }
+    
+    
+    
+    
+    func getGames(_ pk : Int){
+        self.refreshControl?.beginRefreshing()
+        
+        guard let url = URL(string: "http://192.168.100.16/Armis/api/Games?matchDayPk=\(pk)") else {return}
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            guard let response = response else {
+                return
+            }
+            print(response)
+            
+            
+            if let data = data {
+                self.games.removeAll()
+                do{
+                    let decoder = JSONDecoder()
+                    decoder.dataDecodingStrategy = JSONDecoder.DataDecodingStrategy.base64
+                    let newGames = try  decoder.decode([Game].self, from: data)
+                    self.games += newGames
+                    print(self.games.count)
+                }
+                catch{
+                    print("Unable to decode")
+                }
+                DispatchQueue.main.sync {
+                    self.refreshControl?.beginRefreshing()
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                }
+                
+            }
+            
+            }.resume()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //GetMatchDays by Edition PK
-        matchDays.append(MatchDay())
-        matchDays.append(MatchDay(1))
+        getMatchDays()
+       
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //get Games by matchDay pk
-        games.removeAll()
-        if matchDays[row].name == "Jornada 1" {
-            games.append(Game())
-        }
-        else{
-            games.append(Game(type : 1))
-        }
-        refreshControl?.beginRefreshing()
-        tableView.reloadData()
-        refreshControl?.endRefreshing()
+        
+        getGames(matchDays[row].pk)
         
     }
     

@@ -16,7 +16,7 @@ class EditionTable: UITableViewController {
     func loadEditions(){
         self.refreshControl?.beginRefreshing()
         
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/Editions/") else {return}
+        guard let url = URL(string: "http://192.168.100.16/Armis/api/Editions?tournamentPk=\(tournamentPK)") else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {
@@ -50,8 +50,7 @@ class EditionTable: UITableViewController {
         super.viewDidLoad()
 
         // Fill with editions using tournament pk
-        editions.append(Edition())
-        editions.append(Edition(1))
+       loadEditions()
     }
 
     override func didReceiveMemoryWarning() {
