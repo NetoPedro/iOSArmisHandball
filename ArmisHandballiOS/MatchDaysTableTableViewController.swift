@@ -72,18 +72,17 @@ class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDele
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as? GameView else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as? GameViewMatchDayCell else {
             fatalError("The dequeued cell is not an instance of GameView")
         }
         let game = games[indexPath.row]
         
         cell.homeTeamName.text = game.homeClubName
-        cell.visitorsTeamName.text = game.visitorClubName
-        cell.homeTeamScore.text = String(game.homeTeamResult)
-        cell.visitorsTeamScore.text = String(game.visitorTeamResult)
-        cell.game = game
-        cell.homeTeamLogo.image = UIImage(data : game.homeClubLogo)
-        cell.visitorsTeamLogo.image = UIImage(data: game.visitorClubLogo)
+        cell.visitorTeamName.text = game.visitorClubName
+        cell.homeScore.text = String(game.homeTeamResult)
+        cell.visitorScore.text = String(game.visitorTeamResult)
+        cell.homeTeamLogo.image = UIImage(named: "club")// UIImage(data : game.homeClubLogo!)
+        cell.visitorTeamScore.image = UIImage(named: "club")//UIImage(data: game.visitorClubLogo!)
         return cell
     }
     

@@ -19,22 +19,46 @@ class AthleteView: UIViewController {
     @IBOutlet weak var playerTeam: UILabel!
     @IBOutlet weak var playerPhot: UIImageView!
     @IBOutlet weak var pictureView: UIView!
+    
+    func getAthlete(){
+        guard let url = URL(string: "http://192.168.100.16/Armis/api/Athletes/\(athletePk)") else {return}
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            guard let response = response else {
+                return
+            }
+            print(response)
+            
+            
+            if let data = data {
+                do{
+                    let decoder = JSONDecoder()
+                    decoder.dataDecodingStrategy = JSONDecoder.DataDecodingStrategy.base64
+                    let newAthlete = try  decoder.decode(Athlete.self, from: data)
+                    self.athlete = newAthlete
+                }
+                catch{
+                    print("Unable to decode")
+                }
+            }
+            DispatchQueue.main.sync {
+                
+                self.playerName.text = "Name:  \(String(describing: self.athlete.name))"
+                self.playerGender.text = "Gender:  \(self.athlete.gender)"
+                self.playerTeam.text = "Club:  \(self.athlete.clubName)"
+                self.playerNationality.text = "Nationality:  \(self.athlete.nationality)"
+                self.playerPhot.image = UIImage(named : "athlete")//UIImage(data : (self.athlete.photo)!)
+            }
+            }.resume()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pictureView.layer.cornerRadius = pictureView.frame.size.width/2
         pictureView.clipsToBounds = true
         // get Athlete pela PK
-        if athletePk == 0 {
-            athlete = Athlete()
-        }
-        else if athletePk == 1 {
-            athlete = Athlete(1)
-        }
-        playerName.text = "Name:  \(String(describing: athlete.name))"
-        playerGender.text = "Gender:  \(athlete.gender)"
-        playerTeam.text = "Club:  \(athlete.clubName)"
-        playerNationality.text = "Nationality:  \(athlete.nationality)"
-        playerPhot.image = UIImage(data : (athlete.photo))
+        getAthlete()
         // Do any additional setup after loading the view.
     }
 

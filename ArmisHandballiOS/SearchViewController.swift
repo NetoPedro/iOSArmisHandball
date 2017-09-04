@@ -21,7 +21,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         self.searchBar.delegate = self
         searchables.removeAll()
-        searchables.append(Searchable(1))
+        
+        /*searchables.append(Searchable(1))
         searchables.append(Searchable())
         searchables.append(Searchable("OI"))
         searchables.append(Searchable())
@@ -32,14 +33,14 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         searchables.append(Searchable(1))
         searchables.append(Searchable())
         searchables.append(Searchable("OI"))
-        fillLists("")
-
+        fillLists("")*/
+        doSearch()
     }
     
     func doSearch(){
-        /*
+        
         guard let text = searchBar.text else {return}
-        guard let url = URL(string: "http://192.168.100.14/Armis/api/Searchable?name=\(text)") else {return}
+        guard let url = URL(string: "http://192.168.100.16/Armis/api/Searchable?name=\(text)") else {return}
         print(url)
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
@@ -47,10 +48,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                 return
             }
             print(response)
-            guard let error = error else {
-                return
-            }
-            print(error)
+           
             
             if let data = data {
                 self.searchables.removeAll()
@@ -62,28 +60,30 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                 catch{
                     print("Unable to decode")
                 }
+                DispatchQueue.main.sync {
+                    self.fillLists(text)
+                    self.refreshControl?.beginRefreshing()
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                }
             }
-            }.resume() */
-        guard let text = searchBar.text else {return}
+            }.resume()
 
-        fillLists(text)
-        refreshControl?.beginRefreshing()
-        self.tableView.reloadData()
-        refreshControl?.endRefreshing()
+       
     }
     func fillLists(_ text: String){
         clubs.removeAll()
         athletes.removeAll()
         tournaments.removeAll()
         for searchable in searchables{
-            if !searchable.name.localizedCaseInsensitiveContains(text) && text != "" {continue}
-            if searchable.type == "CLUB" {clubs.append(searchable)
+          //  if !searchable.name.localizedCaseInsensitiveContains(text) && text != "" {continue}
+            if searchable.type == 0 {clubs.append(searchable)
                 continue
             }
-            if searchable.type == "ATHLETE" {athletes.append(searchable)
+            if searchable.type == 2 {athletes.append(searchable)
                 continue
             }
-            if searchable.type == "TOURNAMENT" {tournaments.append(searchable)
+            if searchable.type == 1 {tournaments.append(searchable)
                 
             }
             
@@ -117,16 +117,20 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     fileprivate func fillParameters(_ indexPath: IndexPath, _ cell: SearchViewCell, _ section : Int) {
         var searchable : Searchable
+        var image = ""
         if section == 0{
             searchable = clubs[indexPath.row]
+            image = "club"
         }
         else if section == 1{
              searchable = athletes[indexPath.row]
+            image = "athlete"
         }
         else {
             searchable = tournaments[indexPath.row]
+            image = "TeamLogo"
         }
-        cell.searchItemIcon.image = UIImage(data: searchable.icon)
+        cell.searchItemIcon.image = UIImage(named: image) //UIImage(data: searchable.icon!)
         cell.searchItemName.text = searchable.name
     }
     

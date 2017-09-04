@@ -15,8 +15,13 @@ struct Athlete :Codable {
     let gender : String
     let clubName : String
     let nationality : String
-    let photo : Data
+    let photo : Data?
     let teamPk : Int
+    
+    enum CodingKeys : String, CodingKey {
+        case photo = "pic"
+        case pk, name,clubName,gender,nationality,teamPk
+    }
     
     init(){
         let logo = UIImage(named: "athlete")
@@ -76,9 +81,14 @@ struct Game : Codable {
     let visitorClubName : String
     let homeTeamResult : Int
     let visitorTeamResult : Int
-    let homeClubLogo: Data
-    let visitorClubLogo : Data
+    let homeClubLogo: Data?
+    let visitorClubLogo : Data?
     let date : String
+    enum CodingKeys : String, CodingKey {
+        case visitorClubLogo = "visitorLogo"
+        case homeClubLogo = "homeLogo"
+        case pk, matchDay,homeTeamPk,visitorTeamPk,visitorClubName,homeClubName,homeTeamResult,visitorTeamResult,date
+    }
     
     init(){
         let logo = UIImage(named: "club")
@@ -117,10 +127,13 @@ struct GoalRecord : Codable {
     let pk : Int
     let athletePk : Int
     let athleteName : String
-    let athletePhoto : Data
+    let athletePhoto : Data?
     let team : Int
     let count : Int
-    
+    enum CodingKeys : String, CodingKey {
+        case athletePhoto = "photo"
+        case pk,athletePk,athleteName,team,count
+    }
     init(){
         let logo = UIImage(named: "athlete")
         pk = 0
@@ -144,27 +157,33 @@ struct GoalRecord : Codable {
 struct Searchable : Codable {
     let pk : Int
     let name : String
-    let icon : Data
-    let type : String
+    let icon : Data?
+    let type : Int
+    
+    enum CodingKeys : String, CodingKey {
+        case icon = "photo"
+        case pk,name,type
+    }
+    
     init(){
         let logo = UIImage(named: "club")
         pk = 0
         name = "Porto"
         icon = (UIImagePNGRepresentation(logo!)! as Data)
-        type = "CLUB"
+        type = 0
     }
     init(_ par : Int){
         let logo = UIImage(named: "athlete")
         pk = 0
         name = "Ronaldo"
         icon = (UIImagePNGRepresentation(logo!)! as Data)
-        type = "ATHLETE"
+        type = 2
     }
     init(_ par : String){
         let logo = UIImage(named: "TeamLogo")
         pk = 2
         name = "Liga NOS"
         icon = (UIImagePNGRepresentation(logo!)! as Data)
-        type = "TOURNAMENT"
+        type = 1
     }
 }

@@ -11,20 +11,61 @@ import UIKit
 class GoalsScoredViewController: UITableViewController {
     var homeGoalRecords = [GoalRecord]()
     var visitorGoalRecords = [GoalRecord]()
+    var goals = [GoalRecord]()
+    var loaded = false
     var game : Game?
     var home = 0
     func loadData(){
-        homeGoalRecords.append(GoalRecord())
-         visitorGoalRecords.append(GoalRecord(type:1))
-         visitorGoalRecords.append(GoalRecord(type:1))
-        homeGoalRecords.append(GoalRecord())
-         visitorGoalRecords.append(GoalRecord(type:1))
-        homeGoalRecords.append(GoalRecord())
-    }
+        refreshControl?.beginRefreshing()
+        guard let pk  = game?.pk else {return }
+        guard let url = URL(string: "http://192.168.100.16/Armis/api/GoalRecords?gamePk=\(pk)") else {return}
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            guard let response = response else {
+                return
+            }
+            print(response)
+            
+            
+            if let data = data {
+                self.goals.removeAll()
+                do{
+                    let decoder = JSONDecoder()
+                    decoder.dataDecodingStrategy = JSONDecoder.DataDecodingStrategy.base64
+                    let newGoals = try  decoder.decode([GoalRecord].self, from: data)
+                    self.goals += newGoals
+                    self.divideGoals()
+                    print(self.goals.count)
+                }
+                catch{
+                    print("Unable to decode")
+                }
+            }
+            DispatchQueue.main.sync {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+            self.loaded = true
+            }.resume()
     
+       // while !loaded{}
+        
+    }
+    func divideGoals(){
+        homeGoalRecords.removeAll()
+        visitorGoalRecords.removeAll()
+        for goal in goals{
+            if goal.team == 0 {
+                homeGoalRecords.append(goal)
+            }
+            else{
+                visitorGoalRecords.append(goal)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadData()
         //Receber o jogo por parametro
         //WebServices para ir buscar info do jogo
@@ -53,7 +94,7 @@ class GoalsScoredViewController: UITableViewController {
             goalRecord = homeGoalRecords[indexPath.row]}
         else {
             goalRecord = visitorGoalRecords[indexPath.row - homeGoalRecords.count]}
-        cell.playersFaceImage.image = UIImage(data:goalRecord.athletePhoto)
+        cell.playersFaceImage.image = UIImage(named:"athlete")//UIImage(data:goalRecord.athletePhoto!)
         cell.playersNameLabel.text = goalRecord.athleteName
         cell.numberOfGoalsLabel.text = String(goalRecord.count)
         

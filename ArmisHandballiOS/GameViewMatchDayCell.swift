@@ -9,8 +9,14 @@
 import UIKit
 
 class GameViewMatchDayCell: UITableViewCell {
-
+    @IBOutlet weak var homeTeamName: UILabel!
+    
+    @IBOutlet weak var visitorTeamName: UILabel!
+    
     @IBOutlet weak var homeTeamLogo: UIImageView!
+    @IBOutlet weak var homeScore: UILabel!
+    @IBOutlet weak var visitorScore: UILabel!
+    @IBOutlet weak var visitorTeamScore: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
