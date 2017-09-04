@@ -12,6 +12,40 @@ class EditionTable: UITableViewController {
 
     var editions = [Edition]()
     var tournamentPK = 0
+    
+    func loadEditions(){
+        self.refreshControl?.beginRefreshing()
+        
+        guard let url = URL(string: "http://192.168.100.16/Armis/api/Editions/") else {return}
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            guard let response = response else {
+                return
+            }
+            print(response)
+            
+            
+            if let data = data {
+                self.editions.removeAll()
+                do{
+                    let decoder = JSONDecoder()
+                    decoder.dataDecodingStrategy = JSONDecoder.DataDecodingStrategy.base64
+                    let newEditions = try  decoder.decode([Edition].self, from: data)
+                    self.editions += newEditions
+                    print(self.editions.count)
+                }
+                catch{
+                    print("Unable to decode")
+                }
+            }
+            DispatchQueue.main.sync {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+            }.resume()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

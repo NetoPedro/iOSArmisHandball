@@ -12,34 +12,43 @@ import os.log
 class GamesView: UITableViewController {
     
     //MARK: Properties
-    
+    var loaded  = false
     var games = [Game]()
     var game = Game()
     private func loadGames(){
-      /*  guard let url = URL(string: "http://192.168.100.14/Armis/api/games") else {return}
+        self.refreshControl?.beginRefreshing()
+
+       guard let url = URL(string: "http://192.168.100.16/Armis/api/Games") else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {
                 return
             }
             print(response)
-            guard let error = error else {
-                return
-            }
-            print(error)
+           
 
             if let data = data {
                 self.games.removeAll()
                 do{
-                    let newGames = try  JSONDecoder().decode([Game].self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.dataDecodingStrategy = JSONDecoder.DataDecodingStrategy.base64
+                    let newGames = try  decoder.decode([Game].self, from: data)
                     self.games += newGames
+                    print(self.games.count)
                 }
                 catch{
                     print("Unable to decode")
                 }
             }
-        }.resume()*/
-        games.append(Game.init())
+            DispatchQueue.main.sync {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+            self.loaded = true
+        }.resume()
+        
+        
+        /*games.append(Game.init())
         games.append(Game.init())
         games.append(Game.init())
         games.append(Game.init())
@@ -76,6 +85,7 @@ class GamesView: UITableViewController {
         games.append(Game.init(type:1))
         games.append(Game.init(type:1))
         games.append(Game.init(type:1))
+ */
     }
     
     override func viewDidLoad() {
@@ -165,8 +175,8 @@ class GamesView: UITableViewController {
         cell.homeTeamScore.text = String(game.homeTeamResult)
         cell.visitorsTeamScore.text = String(game.visitorTeamResult)
         cell.game = game
-        cell.homeTeamLogo.image = UIImage(data : game.homeClubLogo)
-        cell.visitorsTeamLogo.image = UIImage(data: game.visitorClubLogo)
+        cell.homeTeamLogo.image = UIImage(named: "club") //UIImage(data : game.homeClubLogo!)
+        cell.visitorsTeamLogo.image = UIImage(named: "club") //UIImage(data: game.visitorClubLogo!)
         // fill cell with logos
         return cell
     }

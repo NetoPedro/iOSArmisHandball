@@ -26,8 +26,8 @@ class GameInfoView: UIViewController {
         if let game = game{
             homeTeamName.text = game.homeClubName
             visitorTeamName.text = game.visitorClubName
-            homeLogo.image = UIImage(data: game.homeClubLogo)
-            visitorsLogo.image = UIImage(data: game.visitorClubLogo)
+            homeLogo.image = UIImage(named: "club")//UIImage(data: game.homeClubLogo)
+            visitorsLogo.image = UIImage(named: "club")//UIImage(data: game.visitorClubLogo!)
             visitorsScore.text = String( game.visitorTeamResult)
             homeScore.text = String( game.homeTeamResult)
             
