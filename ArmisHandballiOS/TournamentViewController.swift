@@ -9,14 +9,18 @@
 import UIKit
 
 class TournamentViewController: UIViewController {
-
+    
+    @IBOutlet weak var tournamentName: UILabel!
+    @IBOutlet weak var tournamentImage: UIImageView!
+    var name = ""
+    var image = UIImage()
     var containerViewController : MatchDaysTableTableViewController?
     var editionPk = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tournamentImage.image = image
+        tournamentName.text = name
     }
 
     override func didReceiveMemoryWarning() {

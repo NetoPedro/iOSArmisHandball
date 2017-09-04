@@ -187,6 +187,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             
             let selectedTournament = tournaments[indexPath.row]
             tournamentView?.tournamentPK = selectedTournament.pk
+            tournamentView?.tournamentName = selectedTournament.name
+            tournamentView?.tournamentImage = (UIImagePNGRepresentation((UIImage(named: "TeamLogo"))!)! as Data)
         }
     }
 

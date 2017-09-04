@@ -12,7 +12,8 @@ class EditionTable: UITableViewController {
 
     var editions = [Edition]()
     var tournamentPK = 0
-    
+    var tournamentName = ""
+    var tournamentImage : Data?
     func loadEditions(){
         self.refreshControl?.beginRefreshing()
         
@@ -95,7 +96,8 @@ class EditionTable: UITableViewController {
         }
             let selectedEdition = editions[indexPath.row]
             tournamentView?.editionPk = selectedEdition.pk
-        
+            tournamentView?.name = tournamentName
+        tournamentView?.image = UIImage(data : tournamentImage!)!
     }
     
     /*
