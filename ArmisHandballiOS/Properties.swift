@@ -12,10 +12,16 @@ import Foundation
 class Properties{
     
     static var user : String?
-    static var token  : String?
+    static var pass  : String?
+    
+    static var logged = false
     
     fileprivate static func getBaseURL() -> String{
-        return "http://192.168.100.27/ArmisHandBall/api/"
+        return "http://192.168.100.16/Armis/api/"
+    }
+    
+    static func getAccountURL() -> String{
+        return getBaseURL() + "Account/Login/"
     }
     
     static func getGamesURL() -> String{
