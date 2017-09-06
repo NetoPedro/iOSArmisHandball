@@ -10,18 +10,10 @@ import UIKit
 
 class EditResultTableViewController: UITableViewController {
 
-    var goalRecord = [GoalRecord]()
-    var athletes = [Athlete]()
     
-    var teamName : String?
-    var gamePk : Int?
-    var teamPk : Int?
-    var teamScore : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,9 +35,9 @@ class EditResultTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gameRecord", for: indexPath)
 
-        // Configure the cell...
+       
 
         return cell
     }

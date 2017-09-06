@@ -24,6 +24,8 @@
 		6605710B1F48E4D300D5E053 /* GoalsScoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605710A1F48E4D300D5E053 /* GoalsScoredViewController.swift */; };
 		6613E1C91F600D0600EA03BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6613E1C81F600D0600EA03BB /* LoginViewController.swift */; };
 		6613E1CB1F60536400EA03BB /* EditResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6613E1CA1F60536400EA03BB /* EditResultTableViewController.swift */; };
+		6613E1CD1F60588700EA03BB /* EditResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6613E1CC1F60588700EA03BB /* EditResultViewController.swift */; };
+		6613E1CF1F60635B00EA03BB /* EditGameRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6613E1CE1F60635B00EA03BB /* EditGameRecordCell.swift */; };
 		661426E21F4DF73F00706ECF /* GameStoryboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661426E11F4DF73F00706ECF /* GameStoryboardView.swift */; };
 		661604F31F5A278900627D4F /* GameViewMatchDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661604F21F5A278900627D4F /* GameViewMatchDayCell.swift */; };
 		6621B5E71F5DBCD5008B70BF /* TeamCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621B5E61F5DBCD5008B70BF /* TeamCellView.swift */; };
@@ -78,6 +80,8 @@
 		6605710A1F48E4D300D5E053 /* GoalsScoredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScoredViewController.swift; sourceTree = "<group>"; };
 		6613E1C81F600D0600EA03BB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6613E1CA1F60536400EA03BB /* EditResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditResultTableViewController.swift; sourceTree = "<group>"; };
+		6613E1CC1F60588700EA03BB /* EditResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditResultViewController.swift; sourceTree = "<group>"; };
+		6613E1CE1F60635B00EA03BB /* EditGameRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameRecordCell.swift; sourceTree = "<group>"; };
 		661426E11F4DF73F00706ECF /* GameStoryboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStoryboardView.swift; sourceTree = "<group>"; };
 		661604F21F5A278900627D4F /* GameViewMatchDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewMatchDayCell.swift; sourceTree = "<group>"; };
 		6621B5E61F5DBCD5008B70BF /* TeamCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCellView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				6621B5E81F5FF846008B70BF /* Properties.swift */,
 				6613E1C81F600D0600EA03BB /* LoginViewController.swift */,
 				6613E1CA1F60536400EA03BB /* EditResultTableViewController.swift */,
+				6613E1CC1F60588700EA03BB /* EditResultViewController.swift */,
+				6613E1CE1F60635B00EA03BB /* EditGameRecordCell.swift */,
 			);
 			path = ArmisHandballiOS;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 				660571051F44AF5200D5E053 /* SearchViewCell.swift in Sources */,
 				660571071F462F8700D5E053 /* SearchViewController.swift in Sources */,
 				660571091F48E29A00D5E053 /* GoalsScoredViewCell.swift in Sources */,
+				6613E1CF1F60635B00EA03BB /* EditGameRecordCell.swift in Sources */,
 				660570FF1F38F99A00D5E053 /* ModelObjects.swift in Sources */,
 				6613E1CB1F60536400EA03BB /* EditResultTableViewController.swift in Sources */,
 				6621B5E91F5FF846008B70BF /* Properties.swift in Sources */,
@@ -340,6 +347,7 @@
 				660571011F42343600D5E053 /* GameView.swift in Sources */,
 				6613E1C91F600D0600EA03BB /* LoginViewController.swift in Sources */,
 				66DCF09C1F4F54BB0045F866 /* GameInfoView.swift in Sources */,
+				6613E1CD1F60588700EA03BB /* EditResultViewController.swift in Sources */,
 				661426E21F4DF73F00706ECF /* GameStoryboardView.swift in Sources */,
 				662DF2511F5873E5008A429C /* EditionCell.swift in Sources */,
 				660570C61F34BAC000D5E053 /* SecondViewController.swift in Sources */,
