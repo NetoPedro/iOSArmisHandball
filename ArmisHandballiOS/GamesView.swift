@@ -11,10 +11,15 @@ import os.log
 
 class GamesView: UITableViewController {
     
+   
+    @IBOutlet weak var loginButton: UIButton!
     //MARK: Properties
     var loaded  = false
     var games = [Game]()
     var game = Game()
+    
+    
+    
     private func loadGames(){
         self.refreshControl?.beginRefreshing()
        guard let url = URL(string: Properties.getGamesURL() + "/") else {return}
@@ -200,6 +205,11 @@ class GamesView: UITableViewController {
         let selectedGame = findGameSectionRow(section: indexPath.section, row: indexPath.row)
         gameInfoController.game = selectedGame
     }
+        else {
+            if let loginController = segue.destination as? LoginViewController{
+                loginController.prevUI = self
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

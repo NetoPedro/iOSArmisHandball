@@ -20,9 +20,15 @@ class GameInfoView: UIViewController {
     @IBOutlet weak var homeGameScoresView: UIView!
     var homeContainersViewController : GoalsScoredViewController?
 
+    @IBOutlet weak var editVisitors: UIButton!
+    @IBOutlet weak var editHome: UIButton!
     var game : Game?
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !Properties.logged {
+            editHome.isEnabled = false
+            editVisitors.isEnabled = false
+        }
         if let game = game{
             homeTeamName.text = game.homeClubName
             visitorTeamName.text = game.visitorClubName

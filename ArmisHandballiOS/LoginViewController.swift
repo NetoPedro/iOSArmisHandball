@@ -9,13 +9,19 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
     
+    var prevUI : GamesView?
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var usernameText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if Properties.logged {
+            Properties.user = ""
+            Properties.pass = ""
+            Properties.logged = false
+            prevUI?.loginButton.setTitle("Login", for: UIControlState.normal)
+            self.navigationController?.popViewController(animated: true)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -47,8 +53,10 @@ class LoginViewController: UIViewController {
             else {
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
-                Properties.loged = true
+                Properties.logged = true
+              
                 DispatchQueue.main.sync {
+                      self.prevUI?.loginButton.setTitle("Logout", for: UIControlState.normal)
                     self.navigationController?.popViewController(animated: true)
                 }
             

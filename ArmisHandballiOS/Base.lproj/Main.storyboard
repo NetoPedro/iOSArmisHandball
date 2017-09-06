@@ -129,6 +129,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="loginButton" destination="xuO-dp-Raw" id="jop-78-drF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-V5-cV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,6 +222,8 @@
                         <viewLayoutGuide key="safeArea" id="X43-SX-jal"/>
                     </view>
                     <connections>
+                        <outlet property="editHome" destination="X0w-qu-Iec" id="lEl-Bc-8dV"/>
+                        <outlet property="editVisitors" destination="0M9-2f-sTk" id="ACD-FU-b0K"/>
                         <outlet property="homeGameScoresView" destination="BJZ-qe-rck" id="7Ui-Ga-fgI"/>
                         <outlet property="homeLogo" destination="JsI-hG-Pnj" id="seU-37-UUE"/>
                         <outlet property="homeScore" destination="Adw-2h-72o" id="NTg-6j-5Uy"/>
@@ -915,7 +920,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUG-dl-5Xy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5286.9565217391309" y="-230.70652173913047"/>
+            <point key="canvasLocation" x="4225" y="-911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YKH-7G-ehw">
