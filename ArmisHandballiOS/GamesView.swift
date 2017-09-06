@@ -187,9 +187,7 @@ class GamesView: UITableViewController {
        // guard let view = sender as? GameView else{return}
        // self.game = view.game!
         
-        guard let gameInfoController = segue.destination as? GameInfoView else {
-            fatalError("Unexpected destination: \(segue.destination)")
-        }
+        if let gameInfoController = segue.destination as? GameInfoView {
         
         guard let selectedCell = sender as? GameView else {
             fatalError("Unexpected sender: \(String(describing: sender))")
@@ -201,6 +199,7 @@ class GamesView: UITableViewController {
         
         let selectedGame = findGameSectionRow(section: indexPath.section, row: indexPath.row)
         gameInfoController.game = selectedGame
+    }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

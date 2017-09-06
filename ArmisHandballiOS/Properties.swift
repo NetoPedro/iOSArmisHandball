@@ -11,6 +11,8 @@ import Foundation
 
 class Properties{
     
+    static var user : String?
+    static var token  : String?
     
     fileprivate static func getBaseURL() -> String{
         return "http://192.168.100.27/ArmisHandBall/api/"
@@ -42,5 +44,6 @@ class Properties{
     static func getEditionsURL(tournament : String) -> String {
         return getBaseURL() + "editions?tournamentPk=\(tournament)"
     }
+    
     
 }
