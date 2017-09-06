@@ -18,7 +18,7 @@ class GoalsScoredViewController: UITableViewController {
     func loadData(){
         refreshControl?.beginRefreshing()
         guard let pk  = game?.pk else {return }
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/GoalRecords?gamePk=\(pk)") else {return}
+        guard let url = URL(string: Properties.getGoalRecordURL(game: String(pk))) else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {

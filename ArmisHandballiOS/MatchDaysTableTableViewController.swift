@@ -22,7 +22,7 @@ class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDele
     func getMatchDays(){
         self.refreshControl?.beginRefreshing()
         
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/MatchDays?editionPK=\(editionPk)") else {return}
+        guard let url = URL(string: Properties.getMatchDaysURL(edition: String(editionPk))) else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {
@@ -79,7 +79,7 @@ class MatchDaysTableTableViewController: UITableViewController, UIPickerViewDele
     func getGames(_ pk : Int){
         self.refreshControl?.beginRefreshing()
         
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/Games?matchDayPk=\(pk)") else {return}
+        guard let url = URL(string: "\(Properties.getGamesURL())?matchDayPk=\(pk)") else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {

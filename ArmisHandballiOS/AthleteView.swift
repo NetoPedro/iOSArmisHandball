@@ -21,7 +21,7 @@ class AthleteView: UIViewController {
     @IBOutlet weak var pictureView: UIView!
     
     func getAthlete(){
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/Athletes/\(athletePk)") else {return}
+        guard let url = URL(string: Properties.getAthleteURL(athlete: String(athletePk))) else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {

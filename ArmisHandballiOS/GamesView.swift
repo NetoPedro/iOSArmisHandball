@@ -17,8 +17,8 @@ class GamesView: UITableViewController {
     var game = Game()
     private func loadGames(){
         self.refreshControl?.beginRefreshing()
-
-       guard let url = URL(string: "http://192.168.100.16/Armis/api/Games") else {return}
+       guard let url = URL(string: Properties.getGamesURL() + "/") else {return}
+        print(url)
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {
@@ -43,6 +43,7 @@ class GamesView: UITableViewController {
             DispatchQueue.main.sync {
                 self.tableView.reloadData()
                 self.refreshControl?.endRefreshing()
+
             }
             self.loaded = true
         }.resume()

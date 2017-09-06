@@ -17,7 +17,7 @@ class EditionTable: UITableViewController {
     func loadEditions(){
         self.refreshControl?.beginRefreshing()
         
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/Editions?tournamentPk=\(tournamentPK)") else {return}
+        guard let url = URL(string: Properties.getEditionsURL(tournament: String(tournamentPK))) else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {

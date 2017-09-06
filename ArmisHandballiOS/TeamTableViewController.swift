@@ -17,7 +17,7 @@ class TeamTableViewController: UITableViewController {
     func loadTeams(){
         self.refreshControl?.beginRefreshing()
         
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/Teams?clubPk=\(clubPk)") else {return}
+        guard let url = URL(string: Properties.getTeamsUTL(club: String(clubPk))) else {return}
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             guard let response = response else {

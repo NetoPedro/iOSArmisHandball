@@ -40,7 +40,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     func doSearch(){
         
         guard let text = searchBar.text else {return}
-        guard let url = URL(string: "http://192.168.100.16/Armis/api/Searchable?name=\(text)") else {return}
+        guard let url = URL(string: Properties.getSearchURL(toSearch: String(text))) else {return}
         print(url)
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
